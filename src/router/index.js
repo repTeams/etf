@@ -8,7 +8,7 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-export default new Router({
+const vueRouter = new Router({
     routes: [{
         path: '/',
         name: 'home',
@@ -18,11 +18,20 @@ export default new Router({
         component: resolve => require(['@/views/home/home'], resolve) // 路由懒加载
     },
     {
-        path: '/login',
-        name: 'login',
+        path: '/register',
+        name: 'register',
         meta: {
             title: '注册'
         },
-        component: resolve => require(['@/views/login/login'], resolve) // 路由懒加载
+        component: resolve => require(['@/views/register/register'], resolve) // 路由懒加载
     }]
 });
+vueRouter.beforeEach((to, from, next) => {
+    /* 路由发生变化修改页面title */
+    if (to.meta.title) {
+        window.scrollTo(0, 0);
+        document.title = to.meta.title;
+    }
+    next();
+});
+export default vueRouter;

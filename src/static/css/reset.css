@@ -1,6 +1,6 @@
 html {
     overflow-x: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 body,
@@ -38,9 +38,7 @@ body {
     color: #666666;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
-    padding: 0 10px;
     text-align: left;
-    min-width: 1366px;
 }
 
 select {
