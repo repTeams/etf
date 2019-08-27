@@ -16,5 +16,13 @@ export default new Router({
             title: '首页'
         },
         component: resolve => require(['@/views/home/home'], resolve) // 路由懒加载
+    },
+    {
+        path: '/login',
+        name: 'login',
+        meta: {
+            title: '注册'
+        },
+        component: resolve => require(['@/views/login/login'], resolve) // 路由懒加载
     }]
 });
