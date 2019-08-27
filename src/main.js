@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-27 21:07:24
+ * @LastEditTime: 2019-08-27 21:37:47
  */
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -10,6 +10,7 @@ import App from './App';
 import router from './router';
 import './config/config.js';
 import VueI18n from 'vue-i18n';
+import 'lib-flexible';
 Vue.use(VueI18n);
 
 // 使用多文件管理不同的语言是一个好习惯：
