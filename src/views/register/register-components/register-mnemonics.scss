@@ -1,0 +1,44 @@
+.register-mnemonic-main{
+  width: 632px;
+  margin: 0 auto;
+  padding-top: 150px;
+  .mnemonics-title{
+    font-size: 32px;
+    color: #17FFFF;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+  .mnemonics-title-second{
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 34px;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+  .textarea-warp{
+    text-align: center;
+    .textarea-content{
+      width: 552px;
+      height: 160px;
+      border-radius:5px;
+      padding: 16px;
+      background: #343D7A;
+      border:0;
+      font-size: 16px;
+      color: #7E83AA;
+    }
+  }
+  .next-btn{
+    width: 552px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 0 16px;
+    background: linear-gradient(to right, #354EC8, #21F1F5);
+    box-shadow: 1px 1px 8px #21F1F5;
+    cursor: pointer;
+    margin: 50px auto 0;
+  }
+}
