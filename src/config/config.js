@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-27 21:06:16
+ * @LastEditTime: 2019-08-28 16:20:52
  */
 import Vue from 'vue';
 import Element from 'element-ui';
@@ -9,6 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import * as filters from '../filters/filters.js'; // global filters
 import '@/static/css/reset.css';
 import '@/static/css/animated.css';
+import '@/static/css/common.scss';
 // import '@/static/font/iconfont.css';
 import axios from 'axios';
 import router from '../router';

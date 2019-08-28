@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clearfloat::after {
+    display: block;
+    content: '';
+    clear: both;
+}
