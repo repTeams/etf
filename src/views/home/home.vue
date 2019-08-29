@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-29 17:15:24
+ * @LastEditTime: 2019-08-29 20:40:20
 -->
 <template>
     <div class="home-bg">
@@ -68,14 +68,17 @@
             </button>
             <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
                 alt="白皮书"
-                srcset="../../static/img/home/img_whitepaper@2x.png 2x">
+                srcset="../../static/img/home/img_whitepaper@2x.png 2x"
+                width="687px" height="627px">
         </section>
         <section class="project-introduction screen">
             <h1 class="half-border">{{$t('home.projectIntroduction.title')}}</h1>
             <ul>
                 <li v-for="(item, index) in $t('home.projectIntroduction.section')" :key="index">
                     <h1>{{item.title}}</h1>
-                    <p v-if="item.description">{{item.description}}</p>
+                    <template v-if="item.description.length > 0">
+                        <p v-for="(msg, index) in item.description" :key="index">{{msg}}</p>
+                    </template>
                 </li>
             </ul>
         </section>
@@ -83,11 +86,66 @@
             <h1 class="half-border">{{$t('home.currencyIntroduction.title')}}</h1>
             <ul>
                 <li v-for="(item, index) in $t('home.currencyIntroduction.section')" :key="index">
-                    <h1>{{item.title}}</h1>
-                    <p v-if="item.description">{{item.description}}</p>
+                    <h1>
+                        <!-- 发行全球通用双卡 -->
+                        <img v-if="index === 0" src="../../static/img/home/icon_doubleCard.png"
+                            :alt="item.title"
+                            srcset="../../static/img/home/icon_doubleCard@2x.png 2x"
+                            width="87px" height="94px">
+                        <!-- STO -->
+                        <img v-if="index === 1" src="../../static/img/home/icon_STO.png"
+                            :alt="item.title"
+                            srcset="../../static/img/home/icon_STO@2x.png 2x"
+                            width="87px" height="87px">
+                        <!-- 数字资产 -->
+                        <img v-if="index === 2" src="../../static/img/home/icon_digitalAssets.png"
+                            :alt="item.title"
+                            srcset="../../static/img/home/icon_digitalAssets@2x.png 2x"
+                            width="94px" height="87px">
+                        <!-- 活期理财 -->
+                        <img v-if="index === 3" src="../../static/img/home/icon_manageMoney.png"
+                            :alt="item.title"
+                            srcset="../../static/img/home/icon_manageMoney@2x.png 2x"
+                            width="87px" height="87px">
+                        <!-- 对冲基金 -->
+                        <img v-if="index === 4" src="../../static/img/home/icon_foundation.png"
+                            :alt="item.title"
+                            srcset="../../static/img/home/icon_foundation@2x.png 2x"
+                            width="87px" height="87px">
+                        <!-- 柱形图标 -->
+                        <img v-if="index === 5" src="../../static/img/home/icon_column.png"
+                            :alt="item.title"
+                            srcset="../../static/img/home/icon_column@2x.png 2x"
+                            width="87px" height="94px">
+                        {{item.title}}
+                    </h1>
+                    <template v-if="item.description.length > 0">
+                        <p v-for="(msg, index) in item.description" :key="index">{{msg}}</p>
+                    </template>
                 </li>
             </ul>
-            <!-- <p>{{$t('home.projectIntroduction.description')}}</p> -->
+        </section>
+        <section class="product-advantage">
+            <h1>
+                <p>
+                    {{$t('home.productAdvantage.question')}}
+                    <img src="../../static/img/home/img_question.png"
+                    alt="item.title"
+                    srcset="../../static/img/home/img_question@2x.png 2x"
+                    width="132px" height="136px">
+                </p>
+                <p>ETF TOKEN BANK？</p>
+            </h1>
+            <ul>
+                <li>{{$t('home.productAdvantage.title')}}：</li>
+                <li v-for="(item, index) in $t('home.productAdvantage.advantage')" :key="index">
+                    {{item}}
+                </li>
+            </ul>
+            <img src="../../static/img/home/img_ETF.png"
+                alt="ETF"
+                srcset="../../static/img/home/img_ETF@2x.png 2x"
+                width="559px" height="402px">
         </section>
         <!-- <ul class="box">
             <li class="active-block" @click="changeLand('zh')">中文</li>
@@ -119,7 +177,7 @@ export default {
     .home-bg {
         background-image: url('../../static/img/bg_mobile.png');
         width: 750px;
-        height: 9030px;
+        height: 10353px;
         background-repeat: repeat-y;
         background-size: 750px 1230px;
         /* 加上字间距 */
@@ -362,7 +420,7 @@ export default {
     .project-introduction {
         > h1 {
             padding: 40px 42px;
-            margin-top: 38px;
+            margin-top: 36px;
             margin-bottom: 62px;
         }
         > ul {
@@ -374,20 +432,105 @@ export default {
                     font-size: 30px;
                     color: #17FFFF;
                     font-weight: 400;
-                    line-height: 52px;
+                    line-height: 40px;
                     letter-spacing: 4px;
+                    + p {
+                        margin-top: 36px;
+                    }
                 }
                 p {
-                    margin-top: 38px;
                     font-size: 28px;
                     color: #FFFFFF;
                     opacity: .6;
-                    line-height: 45px;
+                    line-height: 42px;
                 }
             }
             li:not(:last-child) {
                 margin-bottom: 20px;
             }
+        }
+    }
+
+    .currency-introduction {
+        > h1 {
+            padding: 36px 40px 48px 46px;
+            margin-top: 120px;
+            margin-bottom: 55px;
+        }
+        > ul {
+            li {
+                background: #232955;
+                padding: 40px 32px 33px 40px;
+                text-align: left;
+                h1 {
+                    font-size: 30px;
+                    color: #17FFFF;
+                    font-weight: 400;
+                    line-height: 40px;
+                    letter-spacing: 4px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    img {
+                        margin-right: 32px;
+                    }
+                }
+                p {
+                    margin-top: 40px;
+                    font-size: 28px;
+                    color: #FFFFFF;
+                    opacity: .6;
+                    line-height: 42px;
+                    letter-spacing: 4px;
+                }
+            }
+            li:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .product-advantage {
+        text-align: center;
+        > h1 {
+            margin-top: 140px;
+            margin-bottom: 67px;
+            display: inline-block;
+            font-size:64px;
+            color:rgba(23,255,255,1);
+            line-height:84px;
+            background: linear-gradient(135deg,rgba(29,227,243,1) 0%, rgba(67,64,174,1) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color:transparent;
+            > p {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+                letter-spacing: 0;
+                font-weight: bold;
+                > img {
+                    margin-left: 5px;
+                }
+            }
+        }
+        > ul {
+            padding: 0 40px;
+            li {
+                font-size: 28px;
+                text-align: left;
+                color: #DADDDF;
+                line-height: 58px;
+                letter-spacing: 2px;
+                &:first-child {
+                    margin-bottom: 30px;
+                    color: #85F3F5;
+                    font-size: 30px;
+                }
+            }
+        }
+        > img {
+            margin-bottom: 80px;
         }
     }
 
