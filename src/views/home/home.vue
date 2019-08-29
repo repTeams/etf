@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-29 21:29:25
+ * @LastEditTime: 2019-08-29 21:32:14
 -->
 <template>
     <div class="home-bg">
@@ -174,14 +174,14 @@ export default {
         window.addEventListener('scroll', this.isCanScrollToTop);
     },
     destroyed () {
-        window.removeEventListener('scroll', this.isCanScrollToTop); 
+        window.removeEventListener('scroll', this.isCanScrollToTop);
     },
     methods: {
         changeLand (tex) {
             console.log(tex);
             this.$i18n.locale = tex;
         },
-        isCanScrollToTop() {
+        isCanScrollToTop () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
             let browserHeight = window.outerHeight;
             if (scrollTop > browserHeight) {
@@ -190,12 +190,11 @@ export default {
                 this.isScrollTop = false;
             }
         },
-        scrollTop() {
+        scrollTop () {
             let timer = setInterval(() => {
                 document.body.scrollTop -= 400;
                 document.documentElement.scrollTop -= 400;
                 if (document.body.scrollTop <= 0 && document.documentElement.scrollTop <= 0) {
-                    console.log(document.documentElement.scrollTop)
                     document.body.scrollTop = 0;
                     document.documentElement.scrollTop = 0;
                     clearInterval(timer);
