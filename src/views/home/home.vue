@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-29 02:16:03
+ * @LastEditTime: 2019-08-29 17:15:24
 -->
 <template>
     <div class="home-bg">
@@ -30,7 +30,7 @@
                     width="44px" height="36px">
             </div>
         </section>
-        <section class="token-bank">
+        <section class="token-bank screen">
             <h1 class="half-border">{{$t('home.tokenBank.title')}}</h1>
             <p>{{$t('home.tokenBank.description')}}</p>
             <div class="token-bank-mobile">
@@ -42,19 +42,52 @@
                     <button class="btn-mobile-download btn-ios">
                         <img src="../../static/img/home/ios.png"
                                 alt="ios"
-                                srcset="../../static/img/home/ios@2x.png"
+                                srcset="../../static/img/home/ios@2x.png 2x"
                                 width="28px" height="32px">
                         {{$t('home.tokenBank.iosDownload')}}
                     </button>
                     <button class="btn-mobile-download btn-android">
                         <img src="../../static/img/home/android.png"
                                 alt="android"
-                                srcset="../../static/img/home/android@2x.png"
+                                srcset="../../static/img/home/android@2x.png 2x"
                                 width="30px" height="36px">
                         {{$t('home.tokenBank.androidDownload')}}
                     </button>
                 </div>
             </div>
+        </section>
+        <section class="white-paper screen">
+            <h1 class="half-border">{{$t('home.whitePaper.title')}}</h1>
+            <p>{{$t('home.whitePaper.description')}}</p>
+            <button class="btn-mobile-download btn-ios">
+                <img src="../../static/img/home/ios.png"
+                        alt="ios"
+                        srcset="../../static/img/home/ios@2x.png 2x"
+                        width="28px" height="32px">
+                {{$t('home.tokenBank.iosDownload')}}
+            </button>
+            <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
+                alt="白皮书"
+                srcset="../../static/img/home/img_whitepaper@2x.png 2x">
+        </section>
+        <section class="project-introduction screen">
+            <h1 class="half-border">{{$t('home.projectIntroduction.title')}}</h1>
+            <ul>
+                <li v-for="(item, index) in $t('home.projectIntroduction.section')" :key="index">
+                    <h1>{{item.title}}</h1>
+                    <p v-if="item.description">{{item.description}}</p>
+                </li>
+            </ul>
+        </section>
+        <section class="currency-introduction screen">
+            <h1 class="half-border">{{$t('home.currencyIntroduction.title')}}</h1>
+            <ul>
+                <li v-for="(item, index) in $t('home.currencyIntroduction.section')" :key="index">
+                    <h1>{{item.title}}</h1>
+                    <p v-if="item.description">{{item.description}}</p>
+                </li>
+            </ul>
+            <!-- <p>{{$t('home.projectIntroduction.description')}}</p> -->
         </section>
         <!-- <ul class="box">
             <li class="active-block" @click="changeLand('zh')">中文</li>
@@ -69,7 +102,9 @@
 export default {
     name: 'home',
     data () {
-        return {};
+        return {
+
+        };
     },
     methods: {
         changeLand (tex) {
@@ -80,13 +115,89 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+    /* 公用样式 */
     .home-bg {
         background-image: url('../../static/img/bg_mobile.png');
         width: 750px;
         height: 9030px;
         background-repeat: repeat-y;
-        background-size: 750px 1208px;
+        background-size: 750px 1230px;
+        /* 加上字间距 */
+        p {
+            letter-spacing: 2px;
+        }
     }
+
+    .screen {
+        text-align: center;
+        > h1 {
+            display: inline-block;
+            color: #17FFFF;
+            font-size: 64px;
+            font-weight: normal;
+            margin-bottom: 60px;
+            letter-spacing: 6px;
+        }
+        > p {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+            color: #fff;
+        }
+    }
+
+    .btn-mobile-download {
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        -webkit-appearance: none;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 0;
+        margin: 0;
+        -webkit-transition: .1s;
+        transition: .1s;
+        font-weight: 500;
+        padding: 12px 20px;
+        width: 290px;
+        height: 72px;
+        box-shadow: 0px 10px 27px 0px rgba(8,12,76,0.59);
+        border-radius: 36px;
+        font-size: 28px;
+        border: 0;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:active {
+            color: #3a8ee6;
+            border-color: #3a8ee6;
+            outline: 0;
+        }
+        &:focus, &:hover {
+            color: #409EFF;
+            border-color: #c6e2ff;
+            background-color: #ecf5ff;
+        }
+        img {
+            margin-right: 12px;
+        }
+    }
+
+    .btn-ios {
+        background: linear-gradient(-90deg,rgba(1,234,204,1),rgba(53,78,200,1));
+    }
+
+    .half-border {
+        background: linear-gradient(to left, #17FFFF, #17FFFF) left top no-repeat,
+            linear-gradient(to bottom, #17FFFF, #17FFFF) left top no-repeat,
+            linear-gradient(to left, #17FFFF, #17FFFF) right bottom no-repeat,
+            linear-gradient(to top, #17FFFF, #17FFFF) right bottom no-repeat;
+        background-size: 2px 50px, 170px 2px;
+    }
+
+    /* 各自样式 */
     .header {
         background: rgba(9,14,61,.6);
         padding: 35px 32px 34px;
@@ -203,20 +314,13 @@ export default {
 
     .token-bank {
         h1 {
-            color: #17FFFF;
-            padding: 40px 48px 54px;
-            width: 82.53%;
-            font-size: 64px;
-            font-weight: normal;
-            margin: 80px auto 60px;
-            text-align: center;
+            padding: 40px 46px 54px;
+            margin-top: 80px;
+            letter-spacing: 4px;
         }
         p {
             width: 91.2%;
             margin: 0 auto 58px;
-            text-align: center;
-            font-size: 28px;
-            color: #fff;
             line-height: 44px;
         }
         .token-bank-mobile {
@@ -224,47 +328,6 @@ export default {
             justify-content: space-around;
             align-items: center;
             padding: 0 30px;
-            .btn-mobile-download {
-                line-height: 1;
-                white-space: nowrap;
-                cursor: pointer;
-                -webkit-appearance: none;
-                text-align: center;
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-                outline: 0;
-                margin: 0;
-                -webkit-transition: .1s;
-                transition: .1s;
-                font-weight: 500;
-                padding: 12px 20px;
-                width: 290px;
-                height: 72px;
-                box-shadow: 0px 10px 27px 0px rgba(8,12,76,0.59);
-                border-radius: 36px;
-                font-size: 28px;
-                border: 0;
-                color: #fff;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &:active {
-                    color: #3a8ee6;
-                    border-color: #3a8ee6;
-                    outline: 0;
-                }
-                &:focus, &:hover {
-                    color: #409EFF;
-                    border-color: #c6e2ff;
-                    background-color: #ecf5ff;
-                }
-                img {
-                    margin-right: 12px;
-                }
-            }
-            .btn-ios {
-                background: linear-gradient(-90deg,rgba(1,234,204,1),rgba(53,78,200,1));
-            }
             .btn-android {
                 margin-top: 32px;
                 background:linear-gradient(90deg,rgba(52,80,200,1),rgba(133,59,255,1));
@@ -272,12 +335,60 @@ export default {
         }
     }
 
-    .half-border {
-        background: linear-gradient(to left, #17FFFF, #17FFFF) left top no-repeat,
-            linear-gradient(to bottom, #17FFFF, #17FFFF) left top no-repeat,
-            linear-gradient(to left, #17FFFF, #17FFFF) right bottom no-repeat,
-            linear-gradient(to top, #17FFFF, #17FFFF) right bottom no-repeat;
-        background-size: 2px 50px, 200px 2px;
+    .white-paper {
+        position: relative;
+        z-index: 1;
+        height: 1000px;
+        h1 {
+            padding: 40px 42px;
+            margin-top: 120px;
+        }
+        p {
+            width: 90.27%;
+            line-height: 42px;
+            margin: 0 auto 60px;
+        }
+        .btn-ios {
+            margin: 0 auto;
+        }
+        .white-paper-img-bg {
+            position: absolute;
+            top: 38%;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+    .project-introduction {
+        > h1 {
+            padding: 40px 42px;
+            margin-top: 38px;
+            margin-bottom: 62px;
+        }
+        > ul {
+            li {
+                background: #232955;
+                padding: 38px 32px 32px;
+                text-align: left;
+                h1 {
+                    font-size: 30px;
+                    color: #17FFFF;
+                    font-weight: 400;
+                    line-height: 52px;
+                    letter-spacing: 4px;
+                }
+                p {
+                    margin-top: 38px;
+                    font-size: 28px;
+                    color: #FFFFFF;
+                    opacity: .6;
+                    line-height: 45px;
+                }
+            }
+            li:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
     }
 
     @keyframes slideDown {
