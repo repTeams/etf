@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-29 20:40:20
+ * @LastEditTime: 2019-08-29 21:32:14
 -->
 <template>
     <div class="home-bg">
@@ -130,7 +130,7 @@
                 <p>
                     {{$t('home.productAdvantage.question')}}
                     <img src="../../static/img/home/img_question.png"
-                    alt="item.title"
+                    alt="question"
                     srcset="../../static/img/home/img_question@2x.png 2x"
                     width="132px" height="136px">
                 </p>
@@ -147,6 +147,11 @@
                 srcset="../../static/img/home/img_ETF@2x.png 2x"
                 width="559px" height="402px">
         </section>
+        <img v-if="isScrollTop" src="../../static/img/home/icon_up.png"
+            alt="up"
+            srcset="../../static/img/home/icon_up@2x.png 2x"
+            width="114px" height="114px"
+            @click="scrollTop">
         <!-- <ul class="box">
             <li class="active-block" @click="changeLand('zh')">中文</li>
             <li class="active-block" @click="changeLand('en')">英文</li>
@@ -161,19 +166,47 @@ export default {
     name: 'home',
     data () {
         return {
-
+            isScrollTop: false
         };
+    },
+    mounted () {
+        this.isCanScrollToTop();
+        window.addEventListener('scroll', this.isCanScrollToTop);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.isCanScrollToTop);
     },
     methods: {
         changeLand (tex) {
             console.log(tex);
             this.$i18n.locale = tex;
+        },
+        isCanScrollToTop () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            let browserHeight = window.outerHeight;
+            if (scrollTop > browserHeight) {
+                this.isScrollTop = true;
+            } else {
+                this.isScrollTop = false;
+            }
+        },
+        scrollTop () {
+            let timer = setInterval(() => {
+                document.body.scrollTop -= 400;
+                document.documentElement.scrollTop -= 400;
+                if (document.body.scrollTop <= 0 && document.documentElement.scrollTop <= 0) {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    clearInterval(timer);
+                }
+            }, 40);
         }
     }
 };
 </script>
 <style scoped lang="scss">
     /* 公用样式 */
+<<<<<<< HEAD
     .home-bg {
         background-image: url('../../static/img/bg_mobile.png');
         width: 750px;
@@ -186,6 +219,8 @@ export default {
         }
     }
 
+=======
+>>>>>>> dae917e20c03b3123df67c3c28eb4b8088eb506b
     .screen {
         text-align: center;
         > h1 {
@@ -256,6 +291,21 @@ export default {
     }
 
     /* 各自样式 */
+    .home-bg {
+        background-image: url('../../static/img/bg_mobile.png');
+        width: 750px;
+        background-repeat: repeat-y;
+        background-size: 750px 1230px;
+        /* 加上字间距 */
+        p {
+            letter-spacing: 2px;
+        }
+        > img {
+            position: fixed;
+            bottom: 60px;
+            right: 24px;
+        }
+    }
     .header {
         background: rgba(9,14,61,.6);
         padding: 35px 32px 34px;
@@ -496,7 +546,7 @@ export default {
             margin-top: 140px;
             margin-bottom: 67px;
             display: inline-block;
-            font-size:64px;
+            font-size: 64px;
             color:rgba(23,255,255,1);
             line-height:84px;
             background: linear-gradient(135deg,rgba(29,227,243,1) 0%, rgba(67,64,174,1) 100%);
