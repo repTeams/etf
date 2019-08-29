@@ -177,7 +177,7 @@ export default {
     .home-bg {
         background-image: url('../../static/img/bg_mobile.png');
         width: 750px;
-        height: 10353px;
+        min-height: 10353px;
         background-repeat: repeat-y;
         background-size: 750px 1230px;
         /* 加上字间距 */

@@ -109,7 +109,7 @@ export default {
     }
     .come-black-warp{
       position: absolute;
-      width:642px;
+      width:100%;
       text-align: center;
       bottom: -80px;
       left: 0;

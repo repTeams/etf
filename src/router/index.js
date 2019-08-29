@@ -24,6 +24,14 @@ const vueRouter = new Router({
             title: '注册'
         },
         component: resolve => require(['@/views/register/register'], resolve) // 路由懒加载
+    },
+    {
+        path: '/cooperation',
+        name: 'cooperation',
+        meta: {
+            title: '合作伙伴'
+        },
+        component: resolve => require(['@/views/cooperation/cooperation'], resolve) // 路由懒加载
     }]
 });
 vueRouter.beforeEach((to, from, next) => {
