@@ -47,7 +47,7 @@ export default {
         padding-bottom: 0;
       }
     }
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 867px) {
     .cooperation-second-warp{
       justify-content: center;
     }
@@ -56,10 +56,11 @@ export default {
       width: 348px;
       margin-top: -350px;
       font-size: 26px;
+      left: 270px;
       text-align: justify;
       .right-content-item{
         width: 348px;
-        padding: 30px 40px 30px 50px;
+        padding: 30px 20px 30px 25px;
       }
     }
   }
