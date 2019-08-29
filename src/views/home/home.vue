@@ -206,21 +206,6 @@ export default {
 </script>
 <style scoped lang="scss">
     /* 公用样式 */
-<<<<<<< HEAD
-    .home-bg {
-        background-image: url('../../static/img/bg_mobile.png');
-        width: 750px;
-        min-height: 10353px;
-        background-repeat: repeat-y;
-        background-size: 750px 1230px;
-        /* 加上字间距 */
-        p {
-            letter-spacing: 2px;
-        }
-    }
-
-=======
->>>>>>> dae917e20c03b3123df67c3c28eb4b8088eb506b
     .screen {
         text-align: center;
         > h1 {
