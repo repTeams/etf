@@ -1,25 +1,11 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-29 21:32:14
+ * @LastEditTime: 2019-08-30 01:56:11
 -->
 <template>
     <div class="home-bg">
-        <header class="header clearfloat">
-            <div class="header-menu float-left"></div>
-            <div class="header-logo float-left"></div>
-            <div class="header-lang float-right">
-                <p>简</p>
-                <ul>
-                    <li @click="changeLand('zh')">简</li>
-                    <li @click="changeLand('tr')">繁</li>
-                    <li @click="changeLand('en')">EN</li>
-                </ul>
-            </div>
-            <el-row class="float-right">
-                <el-button class="btn-register" round>{{$t('home.register')}}</el-button>
-            </el-row>
-        </header>
+        <!-- <headerVue /> -->
         <section class="first-screen">
             <div class="first-screen-container">
                 <h1>{{$t('home.firstScreen.title')}}</h1>
@@ -34,10 +20,12 @@
             <h1 class="half-border">{{$t('home.tokenBank.title')}}</h1>
             <p>{{$t('home.tokenBank.description')}}</p>
             <div class="token-bank-mobile">
-                <img src="../../static/img/home/img_mobile.png"
-                    alt="手机"
-                    srcset="../../static/img/home/img_mobile@2x.png 2x"
-                    width="227px" height="476px">
+                <picture>
+                    <source media="(min-width: 751px)" srcset="../../static/img/home/img_mobile_pc.png 1x, ../../static/img/home/img_mobile_pc@2x.png 2x">
+                    <img src="../../static/img/home/img_mobile.png"
+                        alt="手机"
+                        srcset="../../static/img/home/img_mobile@2x.png 2x">
+                </picture>
                 <div>
                     <button class="btn-mobile-download btn-ios">
                         <img src="../../static/img/home/ios.png"
@@ -68,7 +56,7 @@
             </button>
             <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
                 alt="白皮书"
-                srcset="../../static/img/home/img_whitepaper@2x.png 2x"
+                srcset="../../static/img/home/img_whitepaper@2x.png 2x, ../../static/img/home/img_whitepaper@2x.png 3x"
                 width="687px" height="627px">
         </section>
         <section class="project-introduction screen">
@@ -152,18 +140,16 @@
             srcset="../../static/img/home/icon_up@2x.png 2x"
             width="114px" height="114px"
             @click="scrollTop">
-        <!-- <ul class="box">
-            <li class="active-block" @click="changeLand('zh')">中文</li>
-            <li class="active-block" @click="changeLand('en')">英文</li>
-            <li class="active-block" @click="changeLand('tr')">繁体</li>
-        </ul>
-        <h1>我这里是{{$t('navbar.home')}}的啦</h1> -->
     </div>
 </template>
 
 <script>
+// import headerVue from '../../components/header.vue';
 export default {
     name: 'home',
+    components: {
+        // headerVue
+    },
     data () {
         return {
             isScrollTop: false
@@ -177,10 +163,6 @@ export default {
         window.removeEventListener('scroll', this.isCanScrollToTop);
     },
     methods: {
-        changeLand (tex) {
-            console.log(tex);
-            this.$i18n.locale = tex;
-        },
         isCanScrollToTop () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
             let browserHeight = window.outerHeight;
@@ -275,12 +257,16 @@ export default {
         background-size: 2px 50px, 170px 2px;
     }
 
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
     /* 各自样式 */
     .home-bg {
         background-image: url('../../static/img/bg_mobile.png');
-        width: 750px;
         background-repeat: repeat-y;
-        background-size: 750px 1230px;
+        background-size: 100% 1208px;
         /* 加上字间距 */
         p {
             letter-spacing: 2px;
@@ -291,87 +277,7 @@ export default {
             right: 24px;
         }
     }
-    .header {
-        background: rgba(9,14,61,.6);
-        padding: 35px 32px 34px;
-        width: 100%;
-        position: absolute;
-        z-index: 10;
-        .header-menu {
-            width: 52px;
-            height: 52px;
-            background-image: url('../../static/img/home/icon_menu.png');
-            background-repeat: no-repeat;
-            background-size: 52px 52px;
-            cursor: pointer;
-        }
-        .header-logo {
-            width: 163px;
-            height: 58px;
-            background-image: url('../../static/img/logo.png');
-            background-repeat: no-repeat;
-            background-size: 163px 58px;
-            cursor: pointer;
-            margin-left: 40px;
-        }
-        .btn-register {
-            padding: 13px 25px;
-            border: 1px solid rgba(255,255,255,.6);
-            font-size: 28px;
-            background: rgba(9,14,61,.6);
-            border-radius: 26px;
-            font-weight: 400;
-            color: #17FFFF;
-            transform: translateZ(0);
-        }
-        .header-lang {
-            position: relative;
-            margin-left: 14px;
-            p {
-                font-size: 28px;
-                font-weight: 400;
-                padding: 13px 26px 13px 13px;
-                color: rgba(255,255,255,1);
-            }
-            ul {
-                display: none;
-                position: absolute;
-                background: rgba(255,255,253,.1);
-                width: 100%;
-                text-align: center;
-                padding: 20px 0;
-                li {
-                    font-size: 28px;
-                    color:rgba(255,255,255,1);
-                    cursor: pointer;
-                    &:hover {
-                        color: #17FFFF;
-                    }
-                }
-                li:not(:last-child) {
-                    margin-bottom: 20px;
-                }
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                border-top: 8px solid #fff;
-                border-right: 8px solid transparent;
-                border-left: 8px solid transparent;
-                top: calc(50% - 4px);
-                right: 0;
-                width: 0;
-                height: 0;
-                transition: all .5s;
-            }
-            &:hover ul {
-                display: block;
-            }
-            &:hover::after {
-                transform: rotate(180deg) translateZ(0);
-            }
-        }
-    }
+
     .first-screen {
         position: relative;
         text-align: center;
@@ -379,10 +285,8 @@ export default {
         color: #fff;
         .first-screen-container {
             background-image: url('../../static/img/home/bg_mobile.png');
-            width: 750px;
             height: 1208px;
             background-repeat: no-repeat;
-            background-size: 750px 1208px;
             padding-top: 200px;
         }
         h1 {
@@ -578,15 +482,20 @@ export default {
         }
     }
 
+    @media only screen and (min-width: 751px) {
+        .home-bg {
+            background-image: url('../../static/img/home/bg_home_pc.png');
+        }
+        .first-screen .first-screen-container {
+            background-image: url('../../static/img/home/bg_mobile_pc.png');
+            background-size: contain;
+            background-position: center 10%;
+        }
+    }
+
     /* 如果设备像素大于等于2，则用2倍图 */
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
     screen and (min--moz-device-pixel-ratio: 2) {
-        .header-menu {
-            background-image: url('../../static/img/home/icon_menu@2x.png');
-        }
-        .header-logo {
-            background-image: url('../../static/img/logo@2x.png');
-        }
         .home-bg {
             background-image: url('../../static/img/bg_mobile@2x.png');
         }
@@ -596,5 +505,20 @@ export default {
     }
     /* 如果设备像素大于等于3，则用3倍图 */
     @media only screen and (-webkit-min-device-pixel-ratio: 3),
-    screen and (min--moz-device-pixel-ratio: 3) {}
+    screen and (min--moz-device-pixel-ratio: 3) {
+        .home-bg {
+            background-image: url('../../static/img/bg_mobile@2x.png');
+        }
+        .first-screen .first-screen-container {
+            background-image: url('../../static/img/home/bg_mobile@2x.png');
+            background-size: contain;
+        }
+        .white-paper {
+            .white-paper-img-bg {
+                top: 56%;
+                left: 46%;
+                transform: translateX(-50%);
+            }
+        }
+    }
 </style>
