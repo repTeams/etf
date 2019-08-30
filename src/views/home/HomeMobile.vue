@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 22:08:03
+ * @LastEditTime: 2019-08-31 01:16:32
 -->
 <template>
     <div class="home-bg">
@@ -9,10 +9,10 @@
             <div class="first-screen-container">
                 <h1>{{$t('home.firstScreen.title')}}</h1>
                 <p>{{$t('home.firstScreen.subTitle')}}</p>
-                <img src="../../static/img/home/img_down.png"
+                <!-- <img src="../../static/img/home/img_down.png"
                     alt="向下"
                     srcset="../../static/img/home/img_down@2x.png 2x"
-                    width="44px" height="36px">
+                    width="44px" height="36px"> -->
             </div>
         </section>
         <section class="token-bank screen">
@@ -189,6 +189,22 @@ export default {
             transform: translateX(-50%);
             animation: slideDown .8s infinite cubic-bezier(0.4, 0, 1, 1);
             cursor: pointer;
+        }
+    }
+    .currency-introduction {
+        > ul {
+            li {
+                h1 {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    .product-advantage {
+        > img {
+            margin-bottom: 80px;
         }
     }
     @media only screen and (min-width: 751px) {

@@ -1,12 +1,12 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 19:03:33
+ * @LastEditTime: 2019-08-31 00:29:40
 -->
 <template>
     <div>
         <HomeMobileVue class="home-mobile" />
-        <HomePcVue class="home-pc" />
+        <HomePcVue class="home-pc" style="overflow: hidden;" />
     </div>
 </template>
 
