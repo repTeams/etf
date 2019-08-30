@@ -169,7 +169,7 @@ export default {
       width: 100%;
     }
   }
-  @media screen and (max-width: 867px) {
+  @media screen and (max-width: 1200px) {
     .cooperation-main{
       background: url('../../static/img/bg_mobile.png');
       background-size: 100%;

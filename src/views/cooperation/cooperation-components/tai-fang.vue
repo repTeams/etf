@@ -47,7 +47,7 @@ export default {
         padding-bottom: 0;
       }
     }
-    @media screen and (max-width: 867px) {
+    @media screen and (max-width: 1200px) {
     .cooperation-second-warp{
       justify-content: center;
     }
