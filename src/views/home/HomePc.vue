@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 19:47:26
+ * @LastEditTime: 2019-08-30 22:15:04
 -->
 <template>
     <div class="home-bg">
@@ -44,15 +44,17 @@
             </div>
         </section>
         <section class="white-paper screen pc-screen">
-            <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
-            <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
-            <button class="btn-mobile-download btn-ios">
-                <img src="../../static/img/home/ios.png"
-                        alt="ios"
-                        srcset="../../static/img/home/ios@2x.png 2x"
-                        width="28px" height="32px">
-                {{$t('home.tokenBank.iosDownload')}}
-            </button>
+            <div>
+                <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
+                <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
+                <button class="btn-mobile-download btn-ios">
+                    <img src="../../static/img/home/ios.png"
+                            alt="ios"
+                            srcset="../../static/img/home/ios@2x.png 2x"
+                            width="28px" height="32px">
+                    {{$t('home.tokenBank.iosDownload')}}
+                </button>
+            </div>
             <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
                 alt="白皮书"
                 srcset="../../static/img/home/img_whitepaper@2x.png 2x, ../../static/img/home/img_whitepaper@2x.png 3x"
@@ -225,6 +227,7 @@ export default {
     }
 
     .token-bank {
+        position: relative;
         .screen-title {
             font-size: 64PX;
         }
@@ -235,27 +238,21 @@ export default {
             font-weight: bold;
             letter-spacing: 0;
         }
+        .token-bank-mobile {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        button {
+            margin: 0 auto;
+        }
     }
 
-    /* 如果设备像素大于等于2，则用2倍图 */
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-    screen and (min--moz-device-pixel-ratio: 2) {
-        .home-bg {
-            background-image: url('../../static/img/bg_mobile@2x.png');
-        }
-    }
-    /* 如果设备像素大于等于3，则用3倍图 */
-    @media only screen and (-webkit-min-device-pixel-ratio: 3),
-    screen and (min--moz-device-pixel-ratio: 3) {
-        .home-bg {
-            background-image: url('../../static/img/bg_mobile@2x.png');
-        }
-        .white-paper {
-            .white-paper-img-bg {
-                top: 56%;
-                left: 46%;
-                transform: translateX(-50%);
-            }
-        }
+    .white-paper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 </style>

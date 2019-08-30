@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 13:33:47
+ * @LastEditTime: 2019-08-30 22:22:19
  */
 import Vue from 'vue';
 import Router from 'vue-router';

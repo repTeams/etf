@@ -1,10 +1,10 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 21:05:23
+ * @LastEditTime: 2019-08-30 21:53:18
 -->
 <template>
-    <header class="header" style="display:none">
+    <header class="header">
         <div class="header-wrap">
             <div class="header-left">
                 <div class="icon-header-menu"></div>
@@ -198,7 +198,6 @@ export default {
             background-image: url('../static/img/logo@2x.png');
         }
     }
-
     @media only screen and (min-width: 751px) {
         [data-dpr="1"] .header {
             background: transparent;
@@ -220,7 +219,7 @@ export default {
             }
         }
     }
-    @media only screen and (max-width: 1030px) {
+    @media only screen and (max-width: 1070px) {
         [data-dpr="1"] .header {
             font-size: 16PX;
             .btn-register, .header-lang p, .header-lang ul li {
@@ -234,8 +233,29 @@ export default {
             }
         }
     }
-    @media only screen and (max-width: 860px) {
+    @media only screen and (max-width: 900px) {
         [data-dpr="1"] .header {
+            .header-lang {
+                margin-left: 0;
+            }
+            .header-menu {
+                margin-left: 15PX;
+                > li {
+                    margin-right: 15PX;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 751px) and (max-width: 800px) {
+        [data-dpr="1"] .header {
+            padding-left: 10px;
+            padding-right: 10px;
+            // .header-lang {
+            //     margin-left: 0;
+            // }
             .header-menu {
                 margin-left: 15PX;
                 > li {

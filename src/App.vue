@@ -1,11 +1,11 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-29 22:47:33
+ * @LastEditTime: 2019-08-30 22:42:06
 -->
 <template>
     <div id="app">
-        <headerVue />
+        <headerVue v-if="isShowHeader" />
         <router-view/>
     </div>
 </template>
@@ -17,6 +17,16 @@ export default {
     name: 'App',
     components: {
         headerVue
+    },
+    data () {
+        return {
+            isShowHeader: true
+        };
+    },
+    watch: {
+        '$route' () {
+            this.isShowHeader = this.$route.name !== 'register';
+        }
     }
 };
 </script>
