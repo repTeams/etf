@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-27 21:06:23
+ * @LastEditTime: 2019-08-30 13:33:47
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -15,7 +15,7 @@ const vueRouter = new Router({
         meta: {
             title: '首页'
         },
-        component: resolve => require(['@/views/home/home'], resolve) // 路由懒加载
+        component: resolve => require(['@/views/home/Home'], resolve) // 路由懒加载
     },
     {
         path: '/register',
@@ -32,7 +32,8 @@ const vueRouter = new Router({
             title: '合作伙伴'
         },
         component: resolve => require(['@/views/cooperation/cooperation'], resolve) // 路由懒加载
-    }]
+    }
+    ]
 });
 vueRouter.beforeEach((to, from, next) => {
     /* 路由发生变化修改页面title */
