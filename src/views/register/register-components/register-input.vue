@@ -34,7 +34,7 @@
           下一步
         </li>
         <li class="come-black-warp">
-          <span class="come-black-tips">返回星美网</span>
+          <span class="come-black-tips" @click="comeBlack()">返回星美网</span>
         </li>
       </ul>
 </template>
@@ -55,6 +55,9 @@ export default {
     methods: {
         changeNext () {
             this.$emit('nextFn', 'second');
+        },
+        comeBlack () {
+            this._jumpOtherUrl('/');
         }
     }
 };
@@ -111,7 +114,7 @@ export default {
       position: absolute;
       width:100%;
       text-align: center;
-      bottom: -80px;
+      bottom: -60px;
       left: 0;
       font-size: 22px;
       color: #ffffff;

@@ -1,10 +1,10 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 17:18:51
+ * @LastEditTime: 2019-08-30 21:05:23
 -->
 <template>
-    <header class="header">
+    <header class="header" style="display:none">
         <div class="header-wrap">
             <div class="header-left">
                 <div class="icon-header-menu"></div>
