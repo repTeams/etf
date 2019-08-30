@@ -140,7 +140,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .cooperation-main{
-    background: url('../../static/img/bg_pc.png');
+    // background: url('../../static/img/bg_pc.png');
     .title-warp{
       padding:100px 0 152px;
     }
@@ -170,12 +170,6 @@ export default {
     }
   }
   @media screen and (max-width: 1200px) {
-    .cooperation-main{
-      background: url('../../static/img/bg_mobile.png');
-      background-size: 100%;
-      height: 100vh;
-      overflow-y: scroll;
-    }
     .cooperation-main .cooperation-box-warp {
         justify-content:center;
       .etf-people-item{

@@ -32,6 +32,22 @@ const vueRouter = new Router({
             title: '合作伙伴'
         },
         component: resolve => require(['@/views/cooperation/cooperation'], resolve) // 路由懒加载
+    },
+    {
+        path: '/newDetail',
+        name: 'newDetail',
+        meta: {
+            title: '新闻媒体'
+        },
+        component: resolve => require(['@/views/new/new-detail'], resolve) // 路由懒加载
+    },
+    {
+        path: '/new',
+        name: 'new',
+        meta: {
+            title: '新闻媒体'
+        },
+        component: resolve => require(['@/views/new/new'], resolve) // 路由懒加载
     }
     ]
 });
