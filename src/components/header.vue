@@ -4,7 +4,7 @@
  * @LastEditTime: 2019-08-30 16:47:15
 -->
 <template>
-    <header class="header">
+    <header class="header" style="display:none">
         <div class="header-wrap">
             <div class="header-left">
                 <div class="icon-header-menu"></div>
@@ -119,7 +119,7 @@ export default {
                     right: 0;
                 }
             }
-            
+
         }
         .header-logo-pc {
             display: none;
