@@ -31,6 +31,15 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss">
+  #app{
+    background: url('./static/img/bg_pc.png');
+    background-size: 100%;
+    min-height: 100vh;
+  }
+  @media screen and (max-width: 750px) {
+    #app{
+      background: url('./static/img/bg_mobile.png');
+    }
+  }
 </style>

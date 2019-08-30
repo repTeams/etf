@@ -55,7 +55,7 @@ export default {
       flex-wrap:wrap;
       margin: 0 auto;
       justify-content:space-between;
-      padding-top: 60px;
+      padding-top: 30px;
     }
     .mnenmonics-ben-item{
       cursor: pointer;

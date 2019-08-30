@@ -61,11 +61,11 @@ export default {
       text-align: center;
     }
     .success-img{
-      width: 231px;
-      height: 141px;
+      width: 201px;
+      height: 111px;
     }
     .success-tips{
-      font-size: 32px;
+      font-size: 24px;
       color: #17FFFF;
       text-align: center;
       padding: 40px 0 60px;
@@ -74,13 +74,13 @@ export default {
       justify-content: space-around;
     }
     .code-img{
-      width: 220px;
-      height: 220px;
+      width: 180px;
+      height: 180px;
     }
     .code-tips{
       text-align: center;
       color: #ffffff;
-      padding: 40px 0 0;
+      padding: 20px 0 0;
     }
     .come-black-warp{
       position: absolute;
