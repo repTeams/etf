@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 01:30:39
+ * @LastEditTime: 2019-08-31 01:41:11
 -->
 <template>
     <div class="home-bg">
@@ -308,7 +308,6 @@ export default {
                     line-height: 35PX;
                 }
             }
-            
         }
     }
     .currency-introduction {
