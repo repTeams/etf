@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 13:46:57
+ * @LastEditTime: 2019-08-30 19:03:33
 -->
 <template>
     <div>
@@ -63,11 +63,11 @@ export default {
     .home-pc {
         display: none;
     }
-    @media only screen and (min-width: 750px) {
-        .home-mobile {
+    @media only screen and (min-width: 751px) {
+        [data-dpr="1"] .home-mobile {
             display: none;
         }
-        .home-pc {
+        [data-dpr="1"] .home-pc {
             display: block;
         }
     }

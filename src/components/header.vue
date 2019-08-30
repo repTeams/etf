@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 16:47:15
+ * @LastEditTime: 2019-08-30 17:18:51
 -->
 <template>
     <header class="header">
@@ -89,7 +89,6 @@ export default {
             align-items: center;
             border-bottom: 1PX solid #17FFFF;
             padding-top: 8PX;
-            // padding-bottom: 24PX;
             margin-left: 37PX;
             > li {
                 color: #fff;
@@ -119,7 +118,6 @@ export default {
                     right: 0;
                 }
             }
-            
         }
         .header-logo-pc {
             display: none;
@@ -201,7 +199,7 @@ export default {
         }
     }
 
-    @media only screen and (min-width: 750px) {
+    @media only screen and (min-width: 751px) {
         [data-dpr="1"] .header {
             background: transparent;
             font-size: 18PX;

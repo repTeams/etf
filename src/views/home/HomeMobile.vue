@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 13:42:05
+ * @LastEditTime: 2019-08-30 19:24:58
 -->
 <template>
     <div class="home-bg">
@@ -16,8 +16,8 @@
             </div>
         </section>
         <section class="token-bank screen">
-            <h1 class="half-border">{{$t('home.tokenBank.title')}}</h1>
-            <p>{{$t('home.tokenBank.description')}}</p>
+            <h1 class="half-border screen-title">{{$t('home.tokenBank.title')}}</h1>
+            <p class="screen-description">{{$t('home.tokenBank.description')}}</p>
             <div class="token-bank-mobile">
                 <img src="../../static/img/home/img_mobile.png"
                     alt="手机"
@@ -41,8 +41,8 @@
             </div>
         </section>
         <section class="white-paper screen">
-            <h1 class="half-border">{{$t('home.whitePaper.title')}}</h1>
-            <p>{{$t('home.whitePaper.description')}}</p>
+            <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
+            <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
             <button class="btn-mobile-download btn-ios">
                 <img src="../../static/img/home/ios.png"
                         alt="ios"
@@ -56,7 +56,7 @@
                 width="687px" height="627px">
         </section>
         <section class="project-introduction screen">
-            <h1 class="half-border">{{$t('home.projectIntroduction.title')}}</h1>
+            <h1 class="half-border screen-title">{{$t('home.projectIntroduction.title')}}</h1>
             <ul>
                 <li v-for="(item, index) in $t('home.projectIntroduction.section')" :key="index">
                     <h1>{{item.title}}</h1>
@@ -67,7 +67,7 @@
             </ul>
         </section>
         <section class="currency-introduction screen">
-            <h1 class="half-border">{{$t('home.currencyIntroduction.title')}}</h1>
+            <h1 class="half-border screen-title">{{$t('home.currencyIntroduction.title')}}</h1>
             <ul>
                 <li v-for="(item, index) in $t('home.currencyIntroduction.section')" :key="index">
                     <h1>
@@ -179,118 +179,9 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-    /* 公用样式 */
-    .screen {
-        text-align: center;
-        > h1 {
-            display: inline-block;
-            color: #17FFFF;
-            font-size: 64px;
-            font-weight: normal;
-            margin-bottom: 60px;
-            letter-spacing: 6px;
-        }
-        > p {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 400;
-            color: #fff;
-        }
-    }
-
-    .btn-mobile-download {
-        line-height: 1;
-        white-space: nowrap;
-        cursor: pointer;
-        -webkit-appearance: none;
-        text-align: center;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        outline: 0;
-        margin: 0;
-        -webkit-transition: .1s;
-        transition: .1s;
-        font-weight: 500;
-        padding: 12px 20px;
-        width: 290px;
-        height: 72px;
-        box-shadow: 0px 10px 27px 0px rgba(8,12,76,0.59);
-        border-radius: 36px;
-        font-size: 28px;
-        border: 0;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:active {
-            color: #3a8ee6;
-            border-color: #3a8ee6;
-            outline: 0;
-        }
-        &:focus, &:hover {
-            color: #409EFF;
-            border-color: #c6e2ff;
-            background-color: #ecf5ff;
-        }
-        img {
-            margin-right: 12px;
-        }
-    }
-
-    .btn-ios {
-        background: linear-gradient(-90deg,rgba(1,234,204,1),rgba(53,78,200,1));
-    }
-
-    .half-border {
-        background: linear-gradient(to left, #17FFFF, #17FFFF) left top no-repeat,
-            linear-gradient(to bottom, #17FFFF, #17FFFF) left top no-repeat,
-            linear-gradient(to left, #17FFFF, #17FFFF) right bottom no-repeat,
-            linear-gradient(to top, #17FFFF, #17FFFF) right bottom no-repeat;
-        background-size: 2px 50px, 170px 2px;
-    }
-
-    section {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* 各自样式 */
-    .home-bg {
-        background-image: url('../../static/img/bg_mobile.png');
-        background-repeat: repeat-y;
-        background-size: 100% 1208px;
-        /* 加上字间距 */
-        p {
-            letter-spacing: 2px;
-        }
-        > img {
-            position: fixed;
-            bottom: 60px;
-            right: 24px;
-        }
-    }
-
+    @import './Home.scss';
     .first-screen {
-        position: relative;
-        text-align: center;
         padding-top: 20px;
-        color: #fff;
-        .first-screen-container {
-            background-image: url('../../static/img/home/bg_mobile.png');
-            height: 1208px;
-            background-repeat: no-repeat;
-            padding-top: 200px;
-        }
-        h1 {
-            font-size: 64px;
-        }
-        p {
-            width: 53.2%;
-            margin: 0 auto;
-            font-size: 32px;
-            margin-top: 36px;
-            line-height: 44px;
-        }
         img {
             position: absolute;
             bottom: 20px;
@@ -300,180 +191,6 @@ export default {
             cursor: pointer;
         }
     }
-
-    .token-bank {
-        h1 {
-            padding: 40px 46px 54px;
-            margin-top: 80px;
-            letter-spacing: 4px;
-        }
-        p {
-            width: 91.2%;
-            margin: 0 auto 58px;
-            line-height: 44px;
-        }
-        .token-bank-mobile {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 0 30px;
-            .btn-android {
-                margin-top: 32px;
-                background:linear-gradient(90deg,rgba(52,80,200,1),rgba(133,59,255,1));
-            }
-        }
-    }
-
-    .white-paper {
-        position: relative;
-        z-index: 1;
-        height: 1000px;
-        h1 {
-            padding: 40px 42px;
-            margin-top: 120px;
-        }
-        p {
-            width: 90.27%;
-            line-height: 42px;
-            margin: 0 auto 60px;
-        }
-        .btn-ios {
-            margin: 0 auto;
-        }
-        .white-paper-img-bg {
-            position: absolute;
-            top: 38%;
-            left: 0;
-            z-index: -1;
-        }
-    }
-
-    .project-introduction {
-        > h1 {
-            padding: 40px 42px;
-            margin-top: 36px;
-            margin-bottom: 62px;
-        }
-        > ul {
-            li {
-                background: #232955;
-                padding: 38px 32px 32px;
-                text-align: left;
-                h1 {
-                    font-size: 30px;
-                    color: #17FFFF;
-                    font-weight: 400;
-                    line-height: 40px;
-                    letter-spacing: 4px;
-                    + p {
-                        margin-top: 36px;
-                    }
-                }
-                p {
-                    font-size: 28px;
-                    color: #FFFFFF;
-                    opacity: .6;
-                    line-height: 42px;
-                }
-            }
-            li:not(:last-child) {
-                margin-bottom: 20px;
-            }
-        }
-    }
-
-    .currency-introduction {
-        > h1 {
-            padding: 36px 40px 48px 46px;
-            margin-top: 120px;
-            margin-bottom: 55px;
-        }
-        > ul {
-            li {
-                background: #232955;
-                padding: 40px 32px 33px 40px;
-                text-align: left;
-                h1 {
-                    font-size: 30px;
-                    color: #17FFFF;
-                    font-weight: 400;
-                    line-height: 40px;
-                    letter-spacing: 4px;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    img {
-                        margin-right: 32px;
-                    }
-                }
-                p {
-                    margin-top: 40px;
-                    font-size: 28px;
-                    color: #FFFFFF;
-                    opacity: .6;
-                    line-height: 42px;
-                    letter-spacing: 4px;
-                }
-            }
-            li:not(:last-child) {
-                margin-bottom: 20px;
-            }
-        }
-    }
-
-    .product-advantage {
-        text-align: center;
-        > h1 {
-            margin-top: 140px;
-            margin-bottom: 67px;
-            display: inline-block;
-            font-size: 64px;
-            color:rgba(23,255,255,1);
-            line-height:84px;
-            background: linear-gradient(135deg,rgba(29,227,243,1) 0%, rgba(67,64,174,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color:transparent;
-            > p {
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-end;
-                letter-spacing: 0;
-                font-weight: bold;
-                > img {
-                    margin-left: 5px;
-                }
-            }
-        }
-        > ul {
-            padding: 0 40px;
-            li {
-                font-size: 28px;
-                text-align: left;
-                color: #DADDDF;
-                line-height: 58px;
-                letter-spacing: 2px;
-                &:first-child {
-                    margin-bottom: 30px;
-                    color: #85F3F5;
-                    font-size: 30px;
-                }
-            }
-        }
-        > img {
-            margin-bottom: 80px;
-        }
-    }
-
-    @keyframes slideDown {
-        0%, 100% {
-            bottom: 20px;
-        }
-        50% {
-            bottom: 10px;
-        }
-    }
-
     @media only screen and (min-width: 751px) {
         .home-bg {
             background-image: url('../../static/img/home/bg_home_pc.png');
