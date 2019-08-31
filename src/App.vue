@@ -1,13 +1,13 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 21:51:11
+ * @LastEditTime: 2019-08-31 23:54:16
 -->
 <template>
     <div id="app">
         <headerVue v-if="isShowHeader" />
         <router-view/>
-        <FooterVue />
+        <FooterVue v-if="isShowFooter" />
     </div>
 </template>
 
@@ -23,12 +23,14 @@ export default {
     },
     data () {
         return {
-            isShowHeader: true
+            isShowHeader: true,
+            isShowFooter: true
         };
     },
     watch: {
         '$route' () {
             this.isShowHeader = this.$route.name !== 'register';
+            this.isShowFooter = this.$route.name !== 'home' && this.$route.name !== 'register';
         }
     }
 };

@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 21:42:49
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 23:35:32
+ * @LastEditTime: 2019-09-01 00:04:20
 -->
 <template>
     <div class="footer">
@@ -29,7 +29,11 @@
             <li class="server">
                 <h1 class="title">{{$t('footer.server.name')}}</h1>
                 <ul>
-                    <li v-for="(item, index) in $t('footer.server.list')" :key="index">{{item}}</li>
+                    <li v-for="(item, index) in $t('footer.server.list')" :key="index">
+                        <router-link :to="item.route" >
+                            {{item.name}}
+                        </router-link>
+                    </li>
                 </ul>
             </li>
             <li class="download">
@@ -174,6 +178,10 @@ export default {
                     color: rgba(252,252,253,1);
                     &:not(:last-child) {
                         margin-bottom: 23px;
+                    }
+                    a {
+                        color: rgba(252,252,253,1);
+                        text-decoration: none;
                     }
                 }
             }

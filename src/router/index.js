@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 13:47:36
+ * @LastEditTime: 2019-08-31 23:50:41
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -55,6 +55,14 @@ const vueRouter = new Router({
             title: '新闻媒体'
         },
         component: resolve => require(['@/views/new/new'], resolve) // 路由懒加载
+    },
+    {
+        path: '/contactUs',
+        name: 'contactUs',
+        meta: {
+            title: '联系我们'
+        },
+        component: resolve => require(['@/views/contact-us/contact-us'], resolve) // 路由懒加载
     }
     ]
 });

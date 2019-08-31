@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 15:11:23
+ * @LastEditTime: 2019-08-31 23:51:58
 -->
 <template>
     <header class="header">
@@ -15,13 +15,13 @@
                     <li @click="jumpOtherUrl('/')">首页</li>
                     <li @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
                     <li @click="jumpOtherUrl('/new')">新闻媒体</li>
-                    <li @click="jumpOtherUrl('/')">联系我们</li>
+                    <li @click="jumpOtherUrl('/contactUs')">联系我们</li>
                     <li @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
                 </ul>
             </div>
             <div class="header-right">
                 <el-row >
-                    <el-button class="btn-register" round>{{$t('home.register')}}</el-button>
+                    <el-button class="btn-register" round @click="jumpOtherUrl('/register')">{{$t('home.register')}}</el-button>
                 </el-row>
                 <div class="header-lang">
                     <p>简</p>

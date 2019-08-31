@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 22:07:24
+ * @LastEditTime: 2019-09-01 00:02:11
  */
 module.exports = {
     home: {
@@ -279,7 +279,26 @@ module.exports = {
         },
         server: {
             name: '服务列表',
-            list: ['首页', '公司介绍', '新闻媒体', '联系我们', '战略或作伙伴']
+            list: [{
+                name: '首页',
+                route: '/'
+            }, {
+                name: '公司介绍',
+                route: '/companyIntroduction'
+            },
+            {
+                name: '新闻媒体',
+                route: '/new'
+            },
+            {
+                name: '联系我们',
+                route: '/contactUs'
+            },
+            {
+                name: '战略合作伙伴',
+                route: '/cooperation'
+            }
+            ]
         },
         download: {
             name: '下载app',
