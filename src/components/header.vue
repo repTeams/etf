@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 21:53:18
+ * @LastEditTime: 2019-08-31 15:11:23
 -->
 <template>
     <header class="header">
@@ -102,13 +102,12 @@ export default {
                 &::before {
                     content: "";
                     position: absolute;
-                    top: -2PX;
                     right: 100%;
                     width: 0;
-                    height: 100%;
-                    border-bottom: 4PX solid #17FFFF;
+                    top: calc(100% - 3px);
+                    border-bottom: 6PX solid #17FFFF;
                     transition: 0.2s all linear;
-                    border-radius: 2PX;
+                    border-radius: 3PX;
                 }
                 &:hover::before {
                     width: 100%;
