@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 18:10:39
+ * @LastEditTime: 2019-08-31 22:07:24
  */
 module.exports = {
     home: {
@@ -149,6 +149,23 @@ module.exports = {
                 description: '英国剑桥金融专家，有十年的工作经验。现任新加坡以太坊基金会高层职位，具有非常充足的行业知识。'
             }
             ]
+        }
+    },
+    footer: {
+        company: {
+            name: '新加坡星美金融科技公司',
+            address: '地址：深圳市南山区科技南十二路12号朗诗大夏1909室',
+            phone: '电话：'
+        },
+        server: {
+            name: '服务列表',
+            list: ['首页', '公司介绍', '新闻媒体', '联系我们', '战略或作伙伴']
+        },
+        download: {
+            name: '下载app',
+            description: '让科技改变未来,打造最强区块链通证银行',
+            ios: 'iOS下载',
+            android: 'Android下载'
         }
     }
 };

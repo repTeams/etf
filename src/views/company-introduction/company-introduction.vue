@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 13:29:44
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 21:32:44
+ * @LastEditTime: 2019-08-31 23:13:31
 -->
 <template>
     <div class="company-introduction">
@@ -356,7 +356,6 @@ export default {
                 background-size: auto 256px;
             }
         }
-        
     }
     /* 如果设备像素大于等于3，则用3倍图 */
     @media only screen and (-webkit-min-device-pixel-ratio: 3),
