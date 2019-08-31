@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 13:29:44
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 21:25:36
+ * @LastEditTime: 2019-08-31 21:32:44
 -->
 <template>
     <div class="company-introduction">
@@ -157,7 +157,7 @@ export default {
 
     /* 各自的样式 */
     .company-introduction {
-        padding-top: 198px;
+        // padding-top: 198px;
         > section {
             max-width: 1200PX;
             margin-left: auto;
