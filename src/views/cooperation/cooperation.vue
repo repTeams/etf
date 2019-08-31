@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-27 20:15:06
+ * @LastEditTime: 2019-08-31 21:37:48
 -->
 <template>
     <ul class="cooperation-main">
@@ -142,7 +142,7 @@ export default {
   .cooperation-main{
     // background: url('../../static/img/bg_pc.png');
     .title-warp{
-      padding:100px 0 152px;
+      padding:0px 0 152px;
     }
     .title-img-warp{
       padding-bottom: 80px;

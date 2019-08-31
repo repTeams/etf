@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 21:53:18
+ * @LastEditTime: 2019-08-31 15:11:23
 -->
 <template>
     <header class="header">
@@ -12,11 +12,11 @@
                 <img class="header-logo-pc" src="../static/img/logo.png"
                     alt="logo" srcset="../static/img/logo@2x.png 2x">
                 <ul class="header-menu">
-                    <li>首页</li>
-                    <li>公司介绍</li>
-                    <li>新闻媒体</li>
-                    <li>联系我们</li>
-                    <li>战略合作伙伴</li>
+                    <li @click="jumpOtherUrl('/')">首页</li>
+                    <li @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
+                    <li @click="jumpOtherUrl('/new')">新闻媒体</li>
+                    <li @click="jumpOtherUrl('/')">联系我们</li>
+                    <li @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
                 </ul>
             </div>
             <div class="header-right">
@@ -46,6 +46,9 @@ export default {
     methods: {
         changeLand (tex) {
             this.$i18n.locale = tex;
+        },
+        jumpOtherUrl (path) {
+            this._jumpOtherUrl(path);
         }
     }
 };
@@ -102,13 +105,12 @@ export default {
                 &::before {
                     content: "";
                     position: absolute;
-                    top: -2PX;
                     right: 100%;
                     width: 0;
-                    height: 100%;
-                    border-bottom: 4PX solid #17FFFF;
+                    top: calc(100% - 3px);
+                    border-bottom: 6PX solid #17FFFF;
                     transition: 0.2s all linear;
-                    border-radius: 2PX;
+                    border-radius: 3PX;
                 }
                 &:hover::before {
                     width: 100%;
