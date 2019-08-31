@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 21:42:49
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 00:04:20
+ * @LastEditTime: 2019-09-01 01:23:54
 -->
 <template>
     <div class="footer">
@@ -129,6 +129,7 @@ export default {
     .footer {
         background:rgba(3,5,28,.82);
         padding: 80px 20px 74px;
+        border-top: 2px solid #09F3F9;
         > ul {
             max-width: 1200PX;
             margin: 0 auto;

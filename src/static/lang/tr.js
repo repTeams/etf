@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 00:05:44
+ * @LastEditTime: 2019-09-01 01:41:31
  */
 module.exports = {
     home: {
@@ -262,7 +262,8 @@ module.exports = {
     },
     aboutUs: {
         title: '联系我们',
-        purpose: '我们致力于建立开源透明的信任机制，星美始终坚持“自主 代码+开源路线”的技术战略。',
+        purpose1: '我们致力于建立开源透明的信任机制，星美始终坚持“自主代码+开源路线”的技术战略。',
+        purpose2: '力争成为世界级区块链底层技术公司，帮助每个组织拥抱区块链 !',
         email: '邮箱',
         emailTips: '请输入您的邮箱',
         phone: '电话',
