@@ -1,22 +1,25 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-30 22:42:06
+ * @LastEditTime: 2019-08-31 21:51:11
 -->
 <template>
     <div id="app">
         <headerVue v-if="isShowHeader" />
         <router-view/>
+        <FooterVue />
     </div>
 </template>
 
 <script>
 import headerVue from './components/header.vue';
+import FooterVue from './components/Footer.vue';
 
 export default {
     name: 'App',
     components: {
-        headerVue
+        headerVue,
+        FooterVue
     },
     data () {
         return {
