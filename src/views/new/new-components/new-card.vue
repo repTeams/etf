@@ -94,4 +94,17 @@ export default {
         }
       }
     }
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    screen and (min--moz-device-pixel-ratio: 3) {
+        .new-main{
+        .new-content-item{
+          flex-direction:column;
+          align-items: center;
+          .new-left{
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
 </style>

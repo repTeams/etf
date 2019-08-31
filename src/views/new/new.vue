@@ -6,44 +6,44 @@
 <template>
     <ul class="new-main">
         <li class="new-title-warp">
-          <etf-title titleContent="新闻媒体"></etf-title>
+          <etf-title :titleContent="$t('new.title')"></etf-title>
         </li>
         <li>
           <new-card
           :newImg="require('./img/img_1.png')"
-          newTitle="区块链技术开发生态环境尚未完善，前路茫茫?"
-          newContent="区块链技术开发生态环境尚未完善，很多区块链技术开发项目落地存在着生态配套设施的问题。 我们对区块链技术应用的认知存在盲区，导致很多区块链底层技术的完善，特别是扩展性问题的,致很多区块链底层技术的完善..."
-          newTime="发布时间：2019-08-21  14:20"
+          :newTitle="$t('new.firstTitle')"
+          :newContent="$t('new.firstContent')"
+          :newTime="$t('new.firstTime')"
           ></new-card>
         </li>
         <li>
           <new-card
           :newImg="require('./img/img_2.png')"
-          newTitle="区块链技术开发生态环境尚未完善，前路茫茫?"
-          newContent="区块链技术开发生态环境尚未完善，很多区块链技术开发项目落地存在着生态配套设施的问题。 我们对区块链技术应用的认知存在盲区，导致很多区块链底层技术的完善，特别是扩展性问题的,致很多区块链底层技术的完善..."
-          newTime="发布时间：2019-08-21  14:20"
+          :newTitle="$t('new.secondTitle')"
+          :newContent="$t('new.secondContent')"
+          :newTime="$t('new.secondTime')"
           ></new-card>
         </li>
         <li>
           <new-card
           :newImg="require('./img/img_3.png')"
-          newTitle="区块链技术开发生态环境尚未完善，前路茫茫?"
-          newContent="区块链技术开发生态环境尚未完善，很多区块链技术开发项目落地存在着生态配套设施的问题。 我们对区块链技术应用的认知存在盲区，导致很多区块链底层技术的完善，特别是扩展性问题的,致很多区块链底层技术的完善..."
-          newTime="发布时间：2019-08-21  14:20"
+          :newTitle="$t('new.thirdTitle')"
+          :newContent="$t('new.thirdContent')"
+          :newTime="$t('new.thirdTime')"
           ></new-card>
         </li>
         <li>
           <new-card
           :newImg="require('./img/img_4.png')"
-          newTitle="区块链技术开发生态环境尚未完善，前路茫茫?"
-          newContent="区块链技术开发生态环境尚未完善，很多区块链技术开发项目落地存在着生态配套设施的问题。 我们对区块链技术应用的认知存在盲区，导致很多区块链底层技术的完善，特别是扩展性问题的,致很多区块链底层技术的完善..."
-          newTime="发布时间：2019-08-21  14:20"
+          :newTitle="$t('new.fourthTitle')"
+          :newContent="$t('new.fourthContent')"
+          :newTime="$t('new.fourthTime')"
           ></new-card>
         </li>
         <el-pagination
           :background='true'
-          prev-text="上一页"
-          next-text="下一页"
+          :prev-text="$t('new.prevTex')"
+          :next-text="$t('new.nextTex')"
           layout="prev, pager, next"
           :total="1000">
         </el-pagination>
@@ -85,6 +85,9 @@ export default {
     .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
       background: transparent;
       color: #17FFFF;
+    }
+    .el-pager li{
+      font-size: 18px;
     }
   }
 </style>

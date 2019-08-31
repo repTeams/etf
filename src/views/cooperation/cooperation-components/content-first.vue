@@ -4,7 +4,7 @@
  * @LastEditTime: 2019-08-27 20:15:06
 -->
 <template>
-    <div class="cooperation-first-item" :style="{'background': 'url('+ cooperationBg + ')'}">
+    <div class="cooperation-first-item" :style="{'backgroundImage': 'url('+ cooperationBg + ')'}">
       <p class="cooperation-first-item-title">{{cooperationTitle?cooperationTitle:'你还没传标题呢'}}</p>
       <p class="cooperation-first-item-content">{{cooperationContent?cooperationContent:'你还没传内容呢'}}</p>
     </div>
@@ -32,6 +32,7 @@ export default {
     height: 300px;
     background: #cccccc;
     margin-bottom: 16px;
+    background-size: cover;
     .cooperation-first-item-title{
       padding: 79px 0 38px 59px;
       color: #17FFFF;

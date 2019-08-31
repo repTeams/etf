@@ -8,8 +8,8 @@
       <div>
         <img class="left-img" src="../img/img_5.png" alt="">
         <div class="right-content">
-          <p class="right-content-item">2014年6月，以太坊基金会在瑞士注册成立，这是一家非营利 性机构，旨在管理以太币销售中筹措的基金，以更好地为以太 坊和去中心化技术生态系统服务。</p>
-          <p class="right-content-item">以太坊基金会正与星美集团的金融专家探讨，以展示世界第二 大区块链如何与其他通证兼容，打造全球区块链通证银行。</p>
+          <p class="right-content-item">{{$t('cooperation.TaifangContent')}}</p>
+          <p class="right-content-item">{{$t('cooperation.TaifangContentTwo')}}</p>
         </div>
       </div>
     </div>

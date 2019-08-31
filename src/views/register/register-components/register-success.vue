@@ -9,20 +9,20 @@
           <img class="success-img" src="../img/icon.png" alt="">
         </li>
         <li class="success-tips">
-          注册成功，扫码下载app登录！
+          {{$t('register.Fourth.title')}}
         </li>
         <li class="code-warp box">
           <div>
             <img class="code-img" src="../img/img-ios.png" alt="">
-            <div class="code-tips">IOS系统</div>
+            <div class="code-tips">{{$t('register.Fourth.iosTips')}}</div>
           </div>
           <div>
             <img class="code-img" src="../img/img-Android.png" alt="">
-            <div class="code-tips">Android系统</div>
+            <div class="code-tips">{{$t('register.Fourth.androidTips')}}</div>
           </div>
         </li>
         <li class="come-black-warp">
-          <span class="come-black-tips" @click="comeBlack()">返回星美网</span>
+          <span class="come-black-tips" @click="comeBlack()">{{$t('register.Fourth.comeBlack')}}</span>
         </li>
     </ul>
 </template>

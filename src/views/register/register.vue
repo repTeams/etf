@@ -27,7 +27,7 @@ export default {
     },
     data () {
         return {
-            steep: 'success'
+            steep: 'first'
         };
     },
     methods: {
