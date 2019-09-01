@@ -17,7 +17,7 @@
               <el-input type="text" v-model="ruleForm.inviteCode" autocomplete="off" :placeholder="$t('register.first.invitationTips')"></el-input>
             </el-form-item>
             <el-form-item label="" prop="password">
-              <el-input type="password" v-model="ruleForm.password" autocomplete="off" :placeholder="$t('register.first.passwordTips')"></el-input>
+              <el-input type="password" v-model="ruleForm.password" autocomplete="new-password" :placeholder="$t('register.first.passwordTips')"></el-input>
             </el-form-item>
             <el-form-item label="" prop="passwordTwo">
               <el-input type="password" v-model="ruleForm.passwordTwo" autocomplete="off" :placeholder="$t('register.first.passwordTwoTips')"></el-input>
