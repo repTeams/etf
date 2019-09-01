@@ -1,10 +1,10 @@
 <!--
  * @Date: 2019-08-31 13:29:44
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 23:13:31
+ * @LastEditTime: 2019-09-01 23:05:40
 -->
 <template>
-    <div class="company-introduction">
+    <div class="company-introduction" :class="{'en-screen': $i18n.locale === 'en'}">
         <etfTitle :titleContent="$t('companyIntroduction.title')" />
         <section class="introduction">
             <div class="introduction-left">
@@ -125,7 +125,9 @@ export default {
     .hexagon {
         width: 100px;
         height: 150px;
-        line-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         border-top: 2px solid #17FFFF;
         border-bottom: 2px solid #17FFFF;
@@ -155,9 +157,20 @@ export default {
         }
     }
 
+    .en-screen {
+        .introduction-right .business > ul li {
+            font-size: 20px !important;
+        }
+        .team-members .member-description-wrap > p {
+            height: 220px;
+        }
+        .team-members > ul > li {
+            height: 780px;
+        }
+    }
+
     /* 各自的样式 */
     .company-introduction {
-        // padding-top: 198px;
         > section {
             max-width: 1200PX;
             margin-left: auto;
@@ -367,7 +380,73 @@ export default {
             }
         }
     }
-
+    @media only screen and (max-width: 1220px) {
+        .team-members {
+            > ul {
+                li {
+                    width: 100%;
+                }
+            }
+        }
+        .en-screen {
+            .team-members .member-description-wrap > p {
+                height: 100%;
+            }
+            .team-members > ul > li {
+                &:first-child {
+                    height: 680px;
+                }
+                &:last-child {
+                    height: 600px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 1140px) {
+        .core-team {
+            > ul {
+                li {
+                    width: 100%;
+                    &:not(:last-child) {
+                        margin-bottom: 80px;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        .introduction {
+            .introduction-right {
+                width: 100%;
+                .business {
+                    > ul {
+                        padding-left: 20px;
+                        li {
+                            &:nth-child(2) {
+                                left: 160px;
+                            }
+                            &:nth-child(3) {
+                                left: 300px;
+                            }
+                            &:nth-child(4) {
+                                left: 440px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .en-screen {
+            .team-members > ul > li {
+                &:first-child {
+                    height: 760px;
+                }
+            }
+            .enterprise-strength > h1 {
+                font-size: 50px;
+            }
+        }
+    }
     @media only screen and (max-width: 750px) {
         .title {
             font-size: 30px;
@@ -401,48 +480,9 @@ export default {
         .enterprise-strength {
             margin-top: 0;
         }
-    }
-    @media only screen and (max-width: 800px) {
-        .introduction {
-            .introduction-right {
-                width: 100%;
-                .business {
-                    > ul {
-                        padding-left: 20px;
-                        li {
-                            &:nth-child(2) {
-                                left: 160px;
-                            }
-                            &:nth-child(3) {
-                                left: 300px;
-                            }
-                            &:nth-child(4) {
-                                left: 440px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    @media only screen and (max-width: 1140px) {
-        .core-team {
-            > ul {
-                li {
-                    width: 100%;
-                    &:not(:last-child) {
-                        margin-bottom: 80px;
-                    }
-                }
-            }
-        }
-    }
-    @media only screen and (max-width: 1220px) {
-        .team-members {
-            > ul {
-                li {
-                    width: 100%;
-                }
+        .en-screen {
+            .team-members > ul > li {
+                height: 1000px !important;
             }
         }
     }
@@ -503,6 +543,16 @@ export default {
                 .member-description-wrap {
                     top: 180px;
                 }
+            }
+        }
+        .en-screen {
+            .team-members > ul > li {
+                &:first-child {
+                    height: 880px;
+                }
+            }
+            .enterprise-strength > h1 {
+                font-size: 50px;
             }
         }
     }
