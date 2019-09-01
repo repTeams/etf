@@ -1,30 +1,45 @@
+<!--
+ * @Date: 2019-08-26 23:27:34
+ * @LastEditors: fashandian
+ * @LastEditTime: 2019-09-01 17:38:10
+-->
 <template>
-  <div class="hello">
-    <ul class="box">
-      <li class="active-block" @click="changeLand('zh')">中文</li>
-      <li class="active-block" @click="changeLand('en')">英文</li>
-      <li class="active-block" @click="changeLand('tr')">繁体</li>
-    </ul>
-    <h1>我这里是{{$t('navbar.home')}}的啦</h1>
-  </div>
+    <div>
+        <HomeMobileVue class="home-mobile" />
+        <HomePcVue class="home-pc" style="overflow: hidden;" />
+    </div>
 </template>
 
 <script>
+import HomeMobileVue from './HomeMobile.vue';
+import HomePcVue from './HomePc.vue';
+
 export default {
-  name: 'home',
-  data () {
-    return {};
-  },
-  methods: {
-    changeLand (tex) {
-      console.log(tex);
-      this.$i18n.locale = tex;
+    name: 'home',
+    components: {
+        HomeMobileVue,
+        HomePcVue
+    },
+    data () {
+        return {
+            isScrollTop: false
+        };
     }
-  }
 };
 </script>
-<style land="scss">
-  .active-block{
-    padding:10px;
-  }
+<style scoped lang="scss">
+    .home-mobile {
+        display: block;
+    }
+    .home-pc {
+        display: none;
+    }
+    @media only screen and (min-width: 751px) {
+        [data-dpr="1"] .home-mobile {
+            display: none;
+        }
+        [data-dpr="1"] .home-pc {
+            display: block;
+        }
+    }
 </style>
