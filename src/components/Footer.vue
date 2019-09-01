@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 21:42:49
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 01:23:54
+ * @LastEditTime: 2019-09-01 21:00:15
 -->
 <template>
     <div class="footer">
@@ -39,14 +39,14 @@
             <li class="download">
                 <h1 class="title">{{$t('footer.download.name')}}</h1>
                 <p>{{$t('footer.download.description')}}</p>
-                <button class="btn-mobile-download btn-ios">
+                <button class="btn-mobile-download btn-ios" @click="download('ios')">
                     <img src="../static/img/home/ios.png"
                             alt="ios"
                             srcset="../static/img/home/ios@2x.png 2x, ../static/img/home/ios@2x.png 3x"
                             width="28px" height="32px">
                     {{$t('footer.download.ios')}}
                 </button>
-                <button class="btn-mobile-download btn-android">
+                <button class="btn-mobile-download btn-android" @click="download('android')">
                     <img src="../static/img/home/android.png"
                             alt="android"
                             srcset="../static/img/home/android@2x.png 2x, ../static/img/home/android@2x.png 3x"
@@ -55,15 +55,25 @@
                 </button>
             </li>
         </ul>
+        <QrCodeVue :qrCode.sync="qrCode"/>
     </div>
 </template>
 <script>
+import QrCodeVue from './QrCode.vue';
 export default {
     name: 'foot',
+    components: {
+        QrCodeVue
+    },
     data () {
         return {
-
+            qrCode: ''
         };
+    },
+    methods: {
+        download (type) {
+            this.qrCode = type;
+        }
     }
 };
 </script>

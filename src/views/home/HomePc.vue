@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 14:43:11
+ * @LastEditTime: 2019-09-01 20:30:49
 -->
 <template>
     <div class="home-bg">
@@ -26,14 +26,14 @@
                 <div>
                     <h1 class="half-border screen-title">{{$t('home.tokenBank.title')}}</h1>
                     <p class="screen-description">{{$t('home.tokenBank.description')}}</p>
-                    <button class="btn-mobile-download btn-ios">
+                    <button class="btn-mobile-download btn-ios" @click="download('ios')">
                         <img src="../../static/img/home/ios.png"
                                 alt="ios"
                                 srcset="../../static/img/home/ios@2x.png 2x"
                                 width="28px" height="32px">
                         {{$t('home.tokenBank.iosDownload')}}
                     </button>
-                    <button class="btn-mobile-download btn-android">
+                    <button class="btn-mobile-download btn-android" @click="download('android')">
                         <img src="../../static/img/home/android.png"
                                 alt="android"
                                 srcset="../../static/img/home/android@2x.png 2x"
@@ -47,7 +47,7 @@
             <div class="white-paper-left">
                 <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
                 <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
-                <button class="btn-mobile-download btn-ios">
+                <button class="btn-mobile-download btn-ios" @click="download('ios')">
                     <img src="../../static/img/home/ios.png"
                             alt="ios"
                             srcset="../../static/img/home/ios@2x.png 2x"
@@ -164,15 +164,21 @@
             srcset="../../static/img/home/icon_up@2x.png 2x"
             width="114px" height="114px"
             @click="scrollTop">
+        <QrCodeVue :qrCode.sync="qrCode"/>
     </div>
 </template>
 
 <script>
+import QrCodeVue from '../../components/QrCode.vue';
 export default {
     name: 'homePc',
+    components: {
+        QrCodeVue
+    },
     data () {
         return {
-            isScrollTop: false
+            isScrollTop: false,
+            qrCode: ''
         };
     },
     mounted () {
@@ -202,6 +208,9 @@ export default {
                     clearInterval(timer);
                 }
             }, 40);
+        },
+        download (type) {
+            this.qrCode = type;
         }
     }
 };
