@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {Decrypt,Encrypt} from './aes';
+import {Decrypt, Encrypt} from './aes';
 export default {
     name: 'register-mnemonics',
     data () {

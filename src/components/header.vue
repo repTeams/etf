@@ -12,18 +12,18 @@
                 <img class="header-logo-pc" src="../static/img/logo.png"
                     alt="logo" srcset="../static/img/logo@2x.png 2x">
                 <ul class="header-menu">
-                    <li :class="{'selected': $route.name == 'home'}" @click="jumpOtherUrl('/')">首页</li>
-                    <li :class="{'selected': $route.name == 'companyIntroduction'}" @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
-                    <li :class="{'selected': $route.name == 'new'}" @click="jumpOtherUrl('/new')">新闻媒体</li>
-                    <li :class="{'selected': $route.name == 'contactUs'}" @click="jumpOtherUrl('/contactUs')">联系我们</li>
-                    <li :class="{'selected': $route.name == 'cooperation'}" @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
+                    <li :class="{'selected': $route.name == 'home'}" @click="jumpOtherUrl('/')">{{$t('hear.page1')}}</li>
+                    <li :class="{'selected': $route.name == 'companyIntroduction'}" @click="jumpOtherUrl('/companyIntroduction')">{{$t('hear.page2')}}</li>
+                    <li :class="{'selected': $route.name == 'new'}" @click="jumpOtherUrl('/new')">{{$t('hear.page3')}}</li>
+                    <li :class="{'selected': $route.name == 'contactUs'}" @click="jumpOtherUrl('/contactUs')">{{$t('hear.page4')}}</li>
+                    <li :class="{'selected': $route.name == 'cooperation'}" @click="jumpOtherUrl('/cooperation')">{{$t('hear.page5')}}</li>
                 </ul>
                 <ul class="header-menu-mobile" v-show="isShowMenuForMobile">
-                    <li :class="{'selected': $route.name == 'home'}" @click="jumpOtherUrl('/')">首页</li>
-                    <li :class="{'selected': $route.name == 'companyIntroduction'}" @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
-                    <li :class="{'selected': $route.name == 'new'}" @click="jumpOtherUrl('/new')">新闻媒体</li>
-                    <li :class="{'selected': $route.name == 'contactUs'}" @click="jumpOtherUrl('/contactUs')">联系我们</li>
-                    <li :class="{'selected': $route.name == 'cooperation'}" @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
+                    <li :class="{'selected': $route.name == 'home'}" @click="jumpOtherUrl('/')">{{$t('hear.page1')}}</li>
+                    <li :class="{'selected': $route.name == 'companyIntroduction'}" @click="jumpOtherUrl('/companyIntroduction')">{{$t('hear.page2')}}</li>
+                    <li :class="{'selected': $route.name == 'new'}" @click="jumpOtherUrl('/new')">{{$t('hear.page3')}}</li>
+                    <li :class="{'selected': $route.name == 'contactUs'}" @click="jumpOtherUrl('/contactUs')">{{$t('hear.page4')}}</li>
+                    <li :class="{'selected': $route.name == 'cooperation'}" @click="jumpOtherUrl('/cooperation')">{{$t('hear.page5')}}</li>
                 </ul>
             </div>
             <div class="header-right">
@@ -31,7 +31,7 @@
                     <el-button class="btn-register" round @click="jumpOtherUrl('/register')">{{$t('home.register')}}</el-button>
                 </el-row>
                 <div class="header-lang">
-                    <p>简</p>
+                    <p>{{getLangName}}</p>
                     <ul>
                         <li @click="changeLand('zh')">简</li>
                         <li @click="changeLand('tr')">繁</li>
@@ -52,12 +52,14 @@ export default {
     },
     mounted () {
         let html = document.querySelector('html');
+        this.$i18n.locale = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'zh';
         html.onclick = $event => {
             this.isShowMenuForMobile = false;
         };
     },
     methods: {
         changeLand (tex) {
+            localStorage.setItem('lang', tex);
             this.$i18n.locale = tex;
         },
         jumpOtherUrl (path) {
@@ -66,6 +68,16 @@ export default {
         showMenu (event) {
             event.stopPropagation();
             this.isShowMenuForMobile = !this.isShowMenuForMobile;
+        }
+    },
+    computed: {
+        getLangName () {
+            let obj = {
+                'zh': '简',
+                'en': '英',
+                'tr': '繁'
+            };
+            return obj[this.$i18n.locale];
         }
     }
 };
