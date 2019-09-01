@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 18:10:39
+ * @LastEditTime: 2019-09-01 21:51:21
  */
 module.exports = {
     hear: {
@@ -269,7 +269,8 @@ module.exports = {
     },
     aboutUs: {
         title: '聯系我們',
-        purpose: '我們致力于建立開源透明的信任機制，星美始終堅持“自主 代碼+開源路線”的技術戰略。',
+        purpose1: '我們致力于建立開源透明的信任機制，星美始終堅持“自主代碼+開源路線”的技術戰略。',
+        purpose2: '力爭成為世界級區塊鏈底層技術公司，幫助每個組織擁抱區塊鏈 !',
         email: '郵箱',
         emailTips: '請輸入您的郵箱',
         phone: '電話',
@@ -286,7 +287,27 @@ module.exports = {
         },
         server: {
             name: '服務列表',
-            list: ['首頁', '公司介紹', '新聞媒體', '聯系我們', '戰略或作夥伴']
+            list: [{
+                name: '首頁',
+                route: '/'
+            },
+            {
+                name: '公司介紹',
+                route: '/companyIntroduction'
+            },
+            {
+                name: '新聞媒體',
+                route: '/new'
+            },
+            {
+                name: '聯系我們',
+                route: '/contactUs'
+            },
+            {
+                name: '戰略合作夥伴',
+                route: '/cooperation'
+            }
+            ]
         },
         download: {
             name: '下載app',

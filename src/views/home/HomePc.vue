@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 20:30:49
+ * @LastEditTime: 2019-09-01 22:27:48
 -->
 <template>
     <div class="home-bg">
@@ -60,7 +60,7 @@
                 srcset="../../static/img/home/img_whitepaper@2x.png 2x, ../../static/img/home/img_whitepaper@2x.png 3x"
                 width="687px" height="627px">
         </section>
-        <section class="project-introduction screen pc-screen">
+        <section class="project-introduction screen pc-screen" :class="{'en-screen': $i18n.locale === 'en'}">
             <h1 class="half-border screen-title">{{$t('home.projectIntroduction.title')}}</h1>
             <ul>
                 <li v-for="(item, index) in $t('home.projectIntroduction.section')" :key="index">
@@ -71,7 +71,7 @@
                 </li>
             </ul>
         </section>
-        <section class="currency-introduction screen pc-screen">
+        <section class="currency-introduction screen pc-screen" :class="{'en-screen': $i18n.locale === 'en'}">
             <h1 class="half-border screen-title">{{$t('home.currencyIntroduction.title')}}</h1>
             <ul>
                 <template v-for="(item, index) in $t('home.currencyIntroduction.section')">
@@ -103,7 +103,7 @@
                 </template>
             </ul>
         </section>
-        <section class="currency-introduction screen pc-screen">
+        <section class="currency-introduction screen pc-screen" :class="{'en-screen': $i18n.locale === 'en'}">
             <h1 class="half-border screen-title">{{$t('home.currencyIntroduction.title')}}</h1>
             <ul>
                 <template v-for="(item, index) in $t('home.currencyIntroduction.section')">
@@ -135,7 +135,7 @@
                 </template>
             </ul>
         </section>
-        <section class="product-advantage pc-screen">
+        <section class="product-advantage pc-screen" :class="{'en-screen': $i18n.locale === 'en'}">
             <h1>
                 <p>
                     {{$t('home.productAdvantage.question')}}
@@ -217,6 +217,12 @@ export default {
 </script>
 <style scoped lang="scss">
     @import './Home.scss';
+    .en-screen {
+        height: auto !important;
+    }
+    .not-en-section {
+        height: 1080PX;
+    }
     .pc-screen{
         max-width: 1200PX;
         height: 1080PX;
@@ -320,6 +326,9 @@ export default {
         }
     }
     .currency-introduction {
+        > h1 {
+            max-width: 90%;
+        }
         > ul {
             display: flex;
             justify-content: space-between;

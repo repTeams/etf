@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 20:56:47
+ * @LastEditTime: 2019-09-01 22:04:39
 -->
 <template>
     <div class="home-bg">
@@ -201,6 +201,9 @@ export default {
         }
     }
     .currency-introduction {
+        > h1 {
+            max-width: 90%;
+        }
         > ul {
             li {
                 h1 {

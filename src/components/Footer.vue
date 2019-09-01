@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 21:42:49
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 21:00:15
+ * @LastEditTime: 2019-09-01 21:36:46
 -->
 <template>
     <div class="footer">
@@ -154,6 +154,7 @@ export default {
         }
         .company {
             .company-name {
+                width: 420px;
                 font-size: 32px;
                 font-weight: 400;
                 color: rgba(255,255,255,1);
@@ -171,6 +172,7 @@ export default {
                 }
             }
             .address {
+                width: 420px;
                 margin-top: 39px;
             }
             .phone {
@@ -199,6 +201,7 @@ export default {
         }
         .download {
             p {
+                width: 300px;
                 font-size: 16px;
                 font-weight: 400;
                 color: rgba(255,255,255,1);

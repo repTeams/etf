@@ -1,23 +1,23 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-27 20:15:06
+ * @LastEditTime: 2019-09-01 21:07:59
 -->
 <template>
     <ul class="register-mnemonic-main">
-      <li class="mnemonics-title">{{$t('register.second.title')}}</li>
-      <li class="mnemonics-title-second">
-        {{$t('register.second.titleSecond')}}
-      </li>
-      <li class="textarea-warp">
-        <textarea v-model="mnemonics" disabled class="textarea-content" :placeholder="$t('register.second.inputTips')" cols="5" rows="10"></textarea>
-      </li>
-      <li class="next-btn" @click="changeNext()">{{$t('register.second.newBtnTips')}}</li>
+        <li class="mnemonics-title">{{$t('register.second.title')}}</li>
+        <li class="mnemonics-title-second">
+            {{$t('register.second.titleSecond')}}
+        </li>
+        <li class="textarea-warp">
+            <textarea v-model="mnemonics" disabled class="textarea-content" :placeholder="$t('register.second.inputTips')" cols="5" rows="10"></textarea>
+        </li>
+        <li class="next-btn" @click="changeNext()">{{$t('register.second.newBtnTips')}}</li>
     </ul>
 </template>
 
 <script>
-import {Decrypt, Encrypt} from './aes';
+import { Decrypt } from './aes';
 export default {
     name: 'register-mnemonics',
     data () {

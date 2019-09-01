@@ -1,12 +1,12 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 18:10:39
+ * @LastEditTime: 2019-09-01 21:46:38
  */
 module.exports = {
     hear: {
-        page1: 'home',
-        page2: 'companyIntroduction',
+        page1: 'Home',
+        page2: 'Company',
         page3: 'News',
         page4: 'Contact Us',
         page5: 'Strategic Partners'
@@ -269,7 +269,8 @@ module.exports = {
     },
     aboutUs: {
         title: 'Contact Us',
-        purpose: 'We are committed to the establishment of open source transparent trust mechanism, Xingmei has always adhered to the "independent code + open source line" technology strategy.',
+        purpose1: 'We are committed to the establishment of open source transparent trust mechanism, Xingmei has always adhered to the "independent code + open source line" technology strategy.',
+        purpose2: 'Strive to become a world-class block chain bottom technology company to help each organization embrace the block chain!',
         email: 'mailbox',
         emailTips: 'Please enter your mailbox',
         phone: 'Telephone',
@@ -286,7 +287,27 @@ module.exports = {
         },
         server: {
             name: 'Service List',
-            list: ['Index', 'Company', 'News', 'Contact us', 'Strategic Partners']
+            list: [{
+                name: 'Home',
+                route: '/'
+            },
+            {
+                name: 'Company',
+                route: '/companyIntroduction'
+            },
+            {
+                name: 'News',
+                route: '/new'
+            },
+            {
+                name: 'Contact us',
+                route: '/contactUs'
+            },
+            {
+                name: 'Strategic Partners',
+                route: '/cooperation'
+            }
+            ]
         },
         download: {
             name: 'download app',
