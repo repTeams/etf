@@ -1,22 +1,29 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 23:51:58
+ * @LastEditTime: 2019-09-01 18:11:32
 -->
 <template>
     <header class="header">
         <div class="header-wrap">
             <div class="header-left">
-                <div class="icon-header-menu"></div>
+                <div class="icon-header-menu" @click="showMenu($event)"></div>
                 <div class="header-logo-mobile"></div>
                 <img class="header-logo-pc" src="../static/img/logo.png"
                     alt="logo" srcset="../static/img/logo@2x.png 2x">
                 <ul class="header-menu">
-                    <li @click="jumpOtherUrl('/')">首页</li>
-                    <li @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
-                    <li @click="jumpOtherUrl('/new')">新闻媒体</li>
-                    <li @click="jumpOtherUrl('/contactUs')">联系我们</li>
-                    <li @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
+                    <li :class="{'selected': $route.name == 'home'}" @click="jumpOtherUrl('/')">首页</li>
+                    <li :class="{'selected': $route.name == 'companyIntroduction'}" @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
+                    <li :class="{'selected': $route.name == 'new'}" @click="jumpOtherUrl('/new')">新闻媒体</li>
+                    <li :class="{'selected': $route.name == 'contactUs'}" @click="jumpOtherUrl('/contactUs')">联系我们</li>
+                    <li :class="{'selected': $route.name == 'cooperation'}" @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
+                </ul>
+                <ul class="header-menu-mobile" v-show="isShowMenuForMobile">
+                    <li :class="{'selected': $route.name == 'home'}" @click="jumpOtherUrl('/')">首页</li>
+                    <li :class="{'selected': $route.name == 'companyIntroduction'}" @click="jumpOtherUrl('/companyIntroduction')">公司介绍</li>
+                    <li :class="{'selected': $route.name == 'new'}" @click="jumpOtherUrl('/new')">新闻媒体</li>
+                    <li :class="{'selected': $route.name == 'contactUs'}" @click="jumpOtherUrl('/contactUs')">联系我们</li>
+                    <li :class="{'selected': $route.name == 'cooperation'}" @click="jumpOtherUrl('/cooperation')">战略合作伙伴</li>
                 </ul>
             </div>
             <div class="header-right">
@@ -40,7 +47,13 @@ export default {
     name: 'Header',
     data () {
         return {
-
+            isShowMenuForMobile: false
+        };
+    },
+    mounted () {
+        let html = document.querySelector('html');
+        html.onclick = $event => {
+            this.isShowMenuForMobile = false;
         };
     },
     methods: {
@@ -49,6 +62,10 @@ export default {
         },
         jumpOtherUrl (path) {
             this._jumpOtherUrl(path);
+        },
+        showMenu (event) {
+            event.stopPropagation();
+            this.isShowMenuForMobile = !this.isShowMenuForMobile;
         }
     }
 };
@@ -105,19 +122,36 @@ export default {
                 &::before {
                     content: "";
                     position: absolute;
-                    right: 100%;
+                    right: 50%;
                     width: 0;
                     top: calc(100% - 3px);
                     border-bottom: 6PX solid #17FFFF;
                     transition: 0.2s all linear;
                     border-radius: 3PX;
                 }
-                &:hover::before {
+                &.selected::before, &:hover::before {
                     width: 100%;
                     right: 0;
                 }
-                &:hover ~ &::before {
+                &.selected ~ &::before, &:hover ~ &::before {
                     right: 0;
+                }
+            }
+        }
+        .header-menu-mobile {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #000;
+            width: 100%;
+            padding: 60px 40px;
+            z-index: 20;
+            box-shadow: 0 0 16px 4px rgba(0,0,0,.1);
+            li {
+                font-size: 38px;
+                color: #fff;
+                &:not(:last-child) {
+                    margin-bottom: 40px;
                 }
             }
         }

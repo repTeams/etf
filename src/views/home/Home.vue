@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 00:29:40
+ * @LastEditTime: 2019-09-01 17:38:10
 -->
 <template>
     <div>
@@ -24,35 +24,6 @@ export default {
         return {
             isScrollTop: false
         };
-    },
-    mounted () {
-        this.isCanScrollToTop();
-        window.addEventListener('scroll', this.isCanScrollToTop);
-    },
-    destroyed () {
-        window.removeEventListener('scroll', this.isCanScrollToTop);
-    },
-    methods: {
-        isCanScrollToTop () {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-            let browserHeight = window.outerHeight;
-            if (scrollTop > browserHeight) {
-                this.isScrollTop = true;
-            } else {
-                this.isScrollTop = false;
-            }
-        },
-        scrollTop () {
-            let timer = setInterval(() => {
-                document.body.scrollTop -= 400;
-                document.documentElement.scrollTop -= 400;
-                if (document.body.scrollTop <= 0 && document.documentElement.scrollTop <= 0) {
-                    document.body.scrollTop = 0;
-                    document.documentElement.scrollTop = 0;
-                    clearInterval(timer);
-                }
-            }, 40);
-        }
     }
 };
 </script>

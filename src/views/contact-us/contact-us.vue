@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 23:49:16
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 17:25:12
+ * @LastEditTime: 2019-09-01 18:06:44
 -->
 <template>
     <div class="about-us">
@@ -316,7 +316,6 @@ export default {
                     border-radius: 44px;
                 }
             }
-            
         }
     }
     @media only screen and (max-width: 1920px) {
@@ -364,7 +363,6 @@ export default {
                     border-radius: 44px;
                 }
             }
-            
         }
     }
 </style>
