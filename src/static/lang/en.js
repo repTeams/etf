@@ -1,230 +1,237 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 01:41:33
+ * @LastEditTime: 2019-08-31 18:10:39
  */
 module.exports = {
+    hear: {
+        page1: 'home',
+        page2: 'companyIntroduction',
+        page3: 'News',
+        page4: 'Contact Us',
+        page5: 'Strategic Partners'
+    },
     home: {
-        register: '注册',
+        register: 'Register',
         firstScreen: {
-            title: '让科技改变未来',
-            subTitle: '新美金融科技制力打造最强区块链通证银行'
+            title: 'Let Science and Technology Change the Future',
+            subTitle: "New America's Financial Science and Technology System to Build the Strongest Block Chain Circular Bank"
         },
         tokenBank: {
             title: 'ETF Token Bank',
-            description: '2019年我们将会打造多款基二区块链的，金融产品，包括：钱包，游戏.博彩.新概念的实体落地，目标在2023年之前我们所有项目实现全部打通线上线下，实现全部智能化，合约化！',
-            iosDownload: 'iOS下载',
-            androidDownload: 'Android下载'
+            description: 'In 2019, we will build a number of base two block chains, financial products, including: wallets, games, gambling. The entity landing of new concepts, the goal is to achieve all of our projects by 2023, online and offline, to achieve all intelligent, contractual!',
+            iosDownload: 'iOS Download',
+            androidDownload: 'Android Download'
         },
         whitePaper: {
             title: 'Whitepaper',
-            description: 'ETF Bank，不仅是一家真正的区块链通证银行，拥有多币种运营+量化套利+多场景应用的生态圈，而且是全球首个最能套利的区块链通证银行',
-            iosDownload: 'iOS下载'
+            description: 'ETF Bank，Not only is it a real block chain passport bank, it has the ecosphere of multi-currency operation + quantitative arbitrage + multi-scenario application, but also is the first block chain passport bank in the world that can arbitrage most.',
+            iosDownload: 'iOS Download'
         },
         projectIntroduction: {
-            title: '项目简介',
+            title: 'Project Profile',
             section: [{
-                title: '1.区块链ETF——世界首家区块链ETF基金',
+                title: '1.Block Chain ETF-the First Block Chain ETF Fund in the World',
                 description: [
-                    'ETF是交易型开放式指数基金，通常又被称为交易所交易基金（Exchange Traded Funds，简称“ETF”），是一种在交易所上市交易的的开放型的指数基金！',
-                    '交易型开放式指数基金属于开放式基金的一种特殊类型，它结合了封闭式基金和开放式基金的运作特点，投资者既可以向基金管理公司存储主流币！同时也可以随时赎回自己的主流币！存和取都是一样的币种！也可以将ETF的平台直接在交易所买卖！'
+                    "Block Chain ETF, the world's first block chain ETF fund, is a trading open-ended index fund, often referred to as an exchange-traded fund（Exchange Traded Funds，Abbreviation “ETF”）, It's an open-ended index fund that is listed and traded on an exchange.",
+                    'Transactional open-end index fund is a special type of open-end fund. It combines the operation characteristics of closed-end fund and open-end fund. Investors can store mainstream currencies to fund management companies. At the same time, you can redeem your mainstream currency at any time! Save and take the same currency! ETF platform can also be traded directly on the exchange!'
                 ]
             },
             {
-                title: '2.区块链ETF提供了足够的融资与投资渠道',
-                description: ['从金融上开始武装区块链发展的资本基础，促进区块链技术的发展。区块链技术的革命性在于将革命性地降低交易成本，彻底取消中间、中介、中心等环节，革命性地提高经济金融交易效率。到2021年区块链技术会实现规模化商业部署，预计在2020年产生800亿至1100亿美元的收益。世界经济论坛也曾预估，到2027年，全球GDP约有10％存储在区块链上。']
+                title: '2.Block chain ETF provides sufficient financing and investment channels',
+                description: ['From the financial point of view, the capital base for the development of the armed block chain will be started, and the development of the block chain technology will be promoted. The revolutionary nature of block chain technology lies in the revolutionary reduction of transaction costs, the complete elimination of intermediate, intermediary and central links, and the revolutionary improvement of economic and financial transaction efficiency. Block chain technology will achieve large-scale commercial deployment by 2021, and is expected to generate revenue of between $80 billion and $110 billion by 2020. The World Economic Forum also predicted that by 2027, about 10% of global GDP will be stored in the block chain.']
             },
             {
-                title: '3.我们ETF基金会，励志要区块链中最强ETF套利机构，把传统最优秀的套利技术和区块链完美结合！',
+                title: '3.Our ETF Foundation encourages the strongest ETF arbitrage organization in the block chain to combine the traditional best arbitrage technology with the block chain perfectly.',
                 description: []
             }
             ]
         },
         currencyIntroduction: {
-            title: 'ETFE货币介绍',
+            title: 'ETF Currency Introduction',
             section: [{
-                title: '发行全球通用双卡',
+                title: 'Issuing Universal Dual Cards',
                 description: [
-                    '1.拥有可以全球跨境100多个国家的全球支付系统;',
-                    '2.实现全球线上线下融合支付、转账、跨境汇款、实现美元、澳元、英镑、日元、港币等 20 余种币别云端自动兑换; l 通证联名卡具有金融储值和全球即时转账等功能;',
-                    '3.打造专为移动装置设计的硬体钱包，同时支援BTC、ETH、LTC等数字资产和所有的 ERC20 通证'
+                    '1.It has a global payment system that can cross more than 100 countries.',
+                    '2.To achieve the global online and offline integration of payment, transfer, cross-border remittances, the realization of more than 20 kinds of currencies such as US dollar, Australian dollar, pound sterling, Japanese yen, Hong Kong dollar, etc. Cloud-based automatic conversion; l card has the functions of financial reserves and global instant transfer;',
+                    '3.Create a hardware wallet specifically designed for mobile devices, while supporting digital assets such as BTC, ETH, LTC and all ERC20 passes'
                     // '4.通过广泛应用和通证硬钱包作为记账单位和信用保障，将自身的资产、 服务和产品量化为和移动装置，建 立可信信息来源，监控金融活动'
                 ]
             },
             {
-                title: 'STO投行介绍',
+                title: 'STO Investment Bank Introduction',
                 description: [
-                    '1.ETF区块链通证银行运用大数据分析和人工智能的方式撮合区块链项目，这是ETF区块链通证银行运用金融科技优化投行业务的一次重大创新探索。',
-                    '2.主要投资具有潜力的数字货币，并为众多的区块链初创企业提供私募金融及品牌包装支持，并且推动区块链经济和金融科技的发展。',
-                    '3.截至目前，ETF区块链通证银行已经投资了近40家企业，覆盖了金融科技新闻资讯、交易所、区块链技术开发与应用、区块链数据挖掘与分析、第三方服务等生态系统中的众多项目。'
+                    '1.ETF Block Chain Circular Bank uses big data analysis and artificial intelligence to match block chain projects. This is an important innovation exploration for ETF Block Chain Circular Bank to optimize investment business by using financial technology.',
+                    '2.It mainly invests in digital currency with potential, provides private finance and brand packaging support for many block chain start-ups, and promotes the development of block chain economy and financial science and technology.',
+                    '3.Up to now, ETF Block Chain Circular Bank has invested in nearly 40 enterprises, covering many projects in the ecosystem such as financial technology news information, exchanges, development and application of Block Chain Technology, Block Chain Data Mining and Analysis, and Third Party Services.'
                 ]
             },
             {
-                title: 'ETF区块链数字资产指数',
+                title: 'ETF Block Chain Digital Asset Index',
                 description: [
-                    '1.ETF已在金融领域成立了机构，通过整合市面上5-10家有潜质的大型企业股票，进行金融市场的股票指数买卖',
-                    '2.此次将在数字货币领域设立区块链数字资产指数，除比特币和以太坊之外，ETF推出的区块数字资产指数指数还包括比特币现金、EOS、莱特币、以太坊现金等10种加密货币',
-                    '3.通过该指数，可一次性接触多个数字货币，该指数持有一篮子市值加权资产，每月重新计算'
+                    '1.ETF has set up an organization in the financial field to conduct stock index trading in the financial market by integrating the shares of 5-10 potential large enterprises on the market.',
+                    "2.In addition to Bitcoin and ETF, ETF's Block Digital Asset Index also includes 10 encrypted currencies such as Bitcoin Cash, EOS, Wright Currency and ETF Cash.",
+                    '3.The index allows one-time exposure to multiple digital currencies. It holds a basket of market-value-weighted assets and recalculates them monthly.'
                 ]
             },
             {
-                title: '活期理财',
+                title: 'Current Financing',
                 description: [
-                    '1. ETF区块链通证银行开启首期“持币通”认购，用户可将数字资产存入持币通，相当于“以币生币”，参考月化利率20%，随存随取的数字资产活期理财。认购成功后，投资者将获得活期月化收益(本息收益)',
-                    '2.在持币通中，投资者可自由存取。存入后本金不锁定，根据约定时间开始计息，直到将币取出后本息解锁并转入投资者账户'
+                    '1.ETF Block Chain Circular Bank opens the first phase of "currency holder" subscription. Users can deposit digital assets into currency holder, which is equivalent to "currency generated by currency", referring to 20% monthly interest rate, and current financing of digital assets with deposit and withdrawal. After successful subscription, investors will get monthly current return (principal and interest return)',
+                    "2.In currency holders, investors have free access. After depositing, the principal is not locked, and the interest is counted according to the agreed time until the principal and interest are unlocked and transferred to the investor's account after the currency is withdrawn."
                 ]
             },
             {
-                title: '对冲基金',
+                title: 'Hedge Fund',
                 description: [
-                    '1.全球数字货币对冲基金目前的资产规模大约在35-50亿美元',
-                    '2.为确保ETF区块链通证银行的稳定发展，银行配置合适数量的数字资产对冲基金，类似于传统银行的定期理财',
-                    '3.基于区块链的主动管理型资产组合，希望利用对冲基金的高回报特性将数字货币的潜在价值充分挖掘起来'
-                    // '4.优秀的量化模型是ETF区块链通证银行的秘密武器',
-                    // '5.管理超过5000万美元资产，拥有业内顶尖基金管理者'
+                    '1.Global digital money hedge funds currently have assets of about $3.5 billion to $5 billion',
+                    "2.To ensure the stable development of ETF block chain circulation banks, banks allocate a suitable number of digital asset hedge funds, similar to traditional banks'regular financial management.",
+                    '3.Based on the active managed portfolio of block chains, we hope to fully tap the potential value of digital currency by utilizing the high return characteristics of hedge funds.'
+                    // '4.Excellent Quantitative Model is the Secret Weapon of ETF Block Chain Bank',
+                    // '5.Manage over $50 million in assets and have top fund managers in the industry'
                 ]
             },
             {
-                title: 'ETF区块链数字资产指数',
+                title: 'ETF Block Chain Digital Asset Index',
                 description: [
-                    '1.ETF已在金融领域成立了机构，通过整合市面上5-10家有潜质的大型企业股票，进行金融市场的股票指数买卖',
-                    '2.此次将在数字货币领域设立区块链数字资产指数，除比特币和以太坊之外，ETF推出的区块数字资产指数指数还包括比特币现金、EOS、莱特币、以太坊现金等10种加密货币',
-                    '3.通过该指数，可一次性接触多个数字货币，该指数持有一篮子市值加权资产，每月重新计算'
+                    '1.ETF has set up an organization in the financial field to conduct stock index trading in the financial market by integrating the shares of 5-10 potential large enterprises on the market.',
+                    "2.In addition to Bitcoin and ETF, ETF's Block Digital Asset Index also includes 10 encrypted currencies such as Bitcoin Cash, EOS, Wright Currency and ETF Cash.",
+                    '3.The index allows one-time exposure to multiple digital currencies. It holds a basket of market-value-weighted assets and recalculates them monthly.'
                 ]
             }
             ]
         },
         productAdvantage: {
-            question: '为什么选择',
-            title: '产品优势',
+            question: 'Why Choose',
+            title: 'Product Advantage',
             advantage: [
-                '1、为客户寻找套利机会的自动系统；',
-                '2、不需要深厚的交易技术支持，适合所有人；',
-                '3、每周7天，每天24小时操作；',
-                '4、可靠快速的交易；',
-                '5、100*无风险套利；'
+                '1、An automatic system for finding arbitrage opportunities for customers;',
+                '2、No need for deep technical support, suitable for everyone;',
+                '3、Operate 24 hours a day, 7 days a week.',
+                '4、Reliable and fast trading;',
+                '5、100* Risk-free arbitrage;'
             ]
         }
     },
     companyIntroduction: {
-        title: '公司介绍',
+        title: 'Company Introduction',
         introduction: {
             location: {
-                title: '星美成立于新加坡',
-                description: '2019年我们将会打造多款基二区块链的，金融产品，包括：钱包，游戏.博彩.新概念的实体落地，目标在2023年之前我们所有项目实现全部打通线上线下，实现全部智能化，合约化！'
+                title: 'Star Mei was founded in Singapore',
+                description: 'In 2019, we will build a number of base two block chains, financial products, including: wallets, games, gambling. The entity landing of new concepts, the goal is to achieve all of our projects by 2023, online and offline, to achieve all intelligent, contractual! '
             },
             business: {
-                title: '公司创新业务',
-                business: ['人工智能', '高频交易', '区块链', '数字资产']
+                title: 'Corporate Innovation Business',
+                business: ['Artificial intelligence', 'High Frequency Trading', 'Block chain', 'Digital assets']
             }
         },
         codeTeam: {
-            title: '核心团队',
+            title: 'Core Team',
             description: [{
-                title: '团队组成',
-                description: '主要由技术极客和业务与家组成，既包含国际顶尖的区块链核心开发与家，也有来自大型金融机构的技术架构与家，以及来自丐界级金融投行、CFA、FRM的专业'
+                title: 'Team composition',
+                description: 'It is mainly composed of technical geeks and business and experts. It includes not only core developers and experts of international top block chains, but also technical architects and experts from large financial institutions, as well as specialties from border-level financial investment banks, CFA and FRM.'
             },
             {
-                title: '核心团队',
-                description: '公司核心团队成立二2016年，在区块链技术、行业解决方案、商业运营不生态系统等方面有着深厚技术积累不高度与业素养。'
+                title: 'Core Team',
+                description: "Founded in 2016, the company's core team has deep technical accumulation and industry literacy in the areas of block chain technology, industry solutions, business operation non-ecosystem and so on."
             }
             ]
         },
         enterpriseStrength: {
-            title: '强大的企业实力',
+            title: 'Strong Enterprise Strength',
             description: [
-                'WHB不新加坡政府有着密切的合作关系，这丌仅仅是一场生意的往来，更多的是为了实现社会的全面发展而迚行的长久的战略形合作。这种关系是十分稳定幵丏安全的，在公司为政府提供高科技信息服务的同时，在各个金融等领域的战略部署也会得到官方的帮劣，从而实现双方共赢的局面。',
-                '2019年星美集团以1000万美金收贩了新加坡科技公司—宏利科技。尖端技术与利的宏利科技，软件是丐界上最先迚的高频交易人工智能机器人，与注二4项颠覆性创新—人工智能，高频交易，区块链和数字资产.采用独特的套利交易策略，利用区块链技术在国际加密货币交易所迚行交易。 • 随着多年以来丌断地迚步不劤力，公司由最基础的生产制造业渐渐发展，如今更是加入了日益兴盛的“互联网+”等领域 • 随着更多产业的相继成熟，金融科技、智慧物流、汽车出行、教育等也都将迎来新一波的“国际化竞争”，这都是未来在东南亚领域可以大力发展的行业。'
+                'WHB does not have a close cooperation with the Singapore government. It is only a business exchange, but also a long-term strategic cooperation to realize the all-round development of society. This relationship is very stable and safe. While the company provides high-tech information services to the government, the strategic deployment in various financial fields will also be helped by the official, so as to achieve a win-win situation for both sides.',
+                'In 2019, Star Mei Group sold Manulife Technologies, a Singapore technology company, for $10 million. Advanced technology and profitable Manulife technology, software is the first high-frequency trading artificial intelligence robot in the world. With 24 subversive innovations - artificial intelligence, high-frequency trading, block chain and digital assets, we adopt a unique arbitrage trading strategy and use block chain technology to conduct transactions on the international encrypted currency exchange. With the development of the most basic manufacturing industry over the years, with the development of the most basic manufacturing industry, it has joined the increasingly prosperous "Internet +" sector. With the maturity of more industries, financial technology, intelligent logistics, automobile travel, education and so on will also usher in a new wave of "international competition". These are all industries that can be vigorously developed in Southeast Asia in the future.'
             ]
         },
         teamMembers: {
             members: [{
                 name: 'Will Johnson',
-                position: 'ETF通证银行首席执行官CEO',
-                description: '在2002年获得英国剑桥金融学博士学位后，被聘请到新加坡星辰银行担任市场总监，并在其后任职于新加坡多家银行担任高层职位，10多年的工作时间累积了非常丰富的金融投资管理经验。现就职于ETF通证银行CEO职位。'
+                position: 'CEO of ETF Communications Bank',
+                description: 'After receiving a Ph.D. in finance from Cambridge in 2002, he was hired to be Marketing Director of Singapore Star Bank, and later held senior positions in many banks in Singapore. Over the past 10 years, he has accumulated rich experience in financial investment management. He is currently working as CEO of ETF Communications Bank.'
             },
             {
                 name: 'Julian',
-                position: '星美集团首席执行官',
-                description: '英国剑桥金融专家，有十年的工作经验。现任新加坡以太坊基金会高层职位，具有非常充足的行业知识。'
+                position: 'Chief Executive Officer of Xingmei Group',
+                description: 'Cambridge Financial Expert, UK, has ten years of working experience. He is currently a senior position in the ETF Foundation in Singapore and has a very good knowledge of the industry.'
             }
             ]
         }
     },
     register: {
         first: {
-            title: '注册',
-            nameTips: '请输入用户名',
-            invitationTips: '请输入邀请码',
-            passwordTips: '请输入登录密码',
-            passwordTwoTips: '请再次输入登录密码',
-            payTips: '请输入支付密码',
-            payTwoTips: '请再次输入支付密码',
-            newBtnTips: '下一步',
-            comeBlack: '返回星空网'
+            title: 'Register',
+            nameTips: 'Pleace enter your username',
+            invitationTips: 'Please enter the invitation code',
+            passwordTips: 'Please enter your login password',
+            passwordTwoTips: 'Please enter your login password again',
+            payTips: 'Please enter the payment password.',
+            payTwoTips: 'Please enter the payment password again.',
+            newBtnTips: 'Next step',
+            comeBlack: 'Return to the Star Network'
         },
         second: {
-            title: '请记录您的钱包助记词并保存到安全地方',
-            titleSecond: '若手机丢失或重置，钱包助记词可用于恢复您的账户，任何时候漏您的助记词，建议不要使用截图保存，采用国内纸质媒介保存更加安全',
-            inputTips: '你能通过输入助记词重置密码，请使用空格分割助记词',
-            newBtnTips: '下一步'
+            title: 'Please record your wallet mnemonic and save it in a safe place',
+            titleSecond: 'If the mobile phone is lost or reset, the wallet mnemonic can be used to restore your account. If you miss your mnemonic at any time, it is recommended not to use screenshots to save it. It is safer to use domestic paper media to save it.',
+            inputTips: 'You can reset the password by entering mnemonic words. Please use space to divide mnemonic words.',
+            newBtnTips: 'Next step'
         },
         third: {
-            title: '验证您的钱包助记词',
-            titleSecond: '请根据您记下的助记词，按顺序点击，验证您备份的助记词正确无误',
-            inputTips: '你能通过输入助记词重置密码，请使用空格分割助记词',
-            newBtnTips: '下一步'
+            title: 'Verify your wallet mnemonic',
+            titleSecond: 'Please click on the mnemonic words you have written down in order to verify that the mnemonic words you have backed up are correct.',
+            inputTips: 'You can reset the password by entering mnemonic words. Please use space to divide mnemonic words.',
+            newBtnTips: 'Next step'
         },
         Fourth: {
-            title: '注册成功，扫码下载app登录！',
-            iosTips: 'IOS系统',
-            androidTips: 'Android系统',
-            comeBlack: '返回星空网'
+            title: 'Register successfully, download app and log in!',
+            iosTips: 'IOS',
+            androidTips: 'Android',
+            comeBlack: 'Return to the Star Network'
         }
     },
     cooperation: {
-        title: '战略合作伙伴',
-        first: '与新加坡政府的合作',
-        financingTitle: '新加坡金管局国际贸易融资平台',
-        financingContent: '平安区块链(WBH)为新加坡金管 局提供国际贸易融资网络的设计、开 发及部署。',
-        ABSTitle: '新加坡金管局国际贸易融资平台',
-        ABSContent: '平安区块链(WBH)为新加坡金管 局提供国际贸易融资网络的设计、开 发及部署。',
-        IoTTitle: '新加坡金管局国际贸易融资平台',
-        IoTContent: '平安区块链(WBH)为新加坡金管 局提供国际贸易融资网络的设计、开 发及部署。',
-        chainTitle: '新加坡金管局国际贸易融资平台',
-        chainContent: '平安区块链(WBH)为新加坡金管 局提供国际贸易融资网络的设计、开 发及部署。',
-        TaifangTitle: '新加坡以太坊基金会',
-        TaifangContent: '2014年6月，以太坊基金会在瑞士注册成立，这是一家非营利 性机构，旨在管理以太币销售中筹措的基金，以更好地为以太 坊和去中心化技术生态系统服务。',
-        TaifangContentTwo: '以太坊基金会正与星美集团的金融专家探讨，以展示世界第二 大区块链如何与其他通证兼容，打造全球区块链通证银行。',
-        supportTitle: '国际财团支持',
-        decentTitle: '德迅投资',
-        decentContent: '由腾讯控股的联合创始人曾李青于2007年创立。作为一家天使投资公司，主要集中于互联网、无线、互动娱乐等高科技领域。德迅投资的团队来自于腾讯等公司的高层，具有IT、通讯、金融等技术背景及丰富的管理、风险投资运作经验。出色的业绩及业内的美誉，赢得了创业者及投资者的信赖。',
-        pantheonTitle: '磐石基金',
-        pantheonContent: '是一家全球领先的私募股权一级与二级中的基金管理机构。其旗下管理资金达236亿美元，在全球范围内投资约700家私募基金，拥有119个全球投资小组和68名投资专家。磐石基金于2004年加入罗素投资集团。',
-        ETFTitle: 'ETF基金',
-        sccTitle: '银链资本',
-        sccContent: '成立于2017年，是一家关注比特币、区块链、金融科技的天使基金。星链资本团队成员来自区块链技术、金融、投资银行、加密数字货币以及社交媒体的专家',
-        huusionTitle: '鹄胜资本管理私人有限公司(“鹄胜资本”)',
-        huusionContent: '是一个持续发展的基金管理公司，亚胜亚洲增长基是为了投资在亚洲，特别是中国及东南亚一带的增长阶段公司，而设立的私募投资基金',
-        conturionTitle: '胜廷投资管理公司(CIM)',
-        conturionContent: '是亚洲一家主要投资于中小型企业的私募股权基金公司，总部设于新加坡并在香港和上海设有办事处，提供一站式的金融服务',
+        title: 'Strategic Partners',
+        first: 'Cooperation with the Government of Singapore',
+        financingTitle: 'Singapore Monetary Authority International Trade Financing Platform',
+        financingContent: 'The Ping An Block Chain (WBH) provides the Singapore Monetary Authority with the design, development and deployment of an international trade financing network.',
+        ABSTitle: 'Singapore Monetary Authority International Trade Financing Platform',
+        ABSContent: 'The Ping An Block Chain (WBH) provides the Singapore Monetary Authority with the design, development and deployment of an international trade financing network.',
+        IoTTitle: 'Singapore Monetary Authority International Trade Financing Platform',
+        IoTContent: 'The Ping An Block Chain (WBH) provides the Singapore Monetary Authority with the design, development and deployment of an international trade financing network.',
+        chainTitle: 'Singapore Monetary Authority International Trade Financing Platform',
+        chainContent: 'The Ping An Block Chain (WBH) provides the Singapore Monetary Authority with the design, development and deployment of an international trade financing network.',
+        TaifangTitle: 'Singaporean ETF Fund',
+        TaifangContent: 'In June 2014, the ETF Foundation was registered in Switzerland as a non-profit organization to manage the funds raised in ETF sales to better serve the ETF and decentralized technology ecosystem.',
+        TaifangContentTwo: "The ETF is discussing with financial experts from Singmei Group to show how the world's second largest block chain can be compatible with other passes and build a global block chain passport bank.",
+        supportTitle: 'International consortium support',
+        decentTitle: 'Dexun Investment',
+        decentContent: "Zeng Li Qing, co-founder of Tencent Holdings, was founded in 2007. As an angel investment company, it mainly focuses on high-tech fields such as internet, wireless, interactive entertainment and so on. Dexun's investment team is from the top of Tencent and other companies, with IT, communications, finance and other technical background and rich management, venture capital operation experience. Excellent performance and reputation in the industry have won the trust of entrepreneurs and investors.",
+        pantheonTitle: 'Pangaea Capital Management',
+        pantheonContent: 'It is a leading private equity fund management institution in the world. It manages $23.6 billion and invests in about 700 private equity funds worldwide. It has 119 global investment teams and 68 investment experts. Panshi Fund joined Russell Investment Group in 2004.',
+        ETFTitle: 'ETF fund',
+        sccTitle: 'Silver Chain Capital',
+        sccContent: 'Founded in 2017, it is an angel fund focusing on Bitcoin, block chains, financial technology. Star Chain Capital team members are experts in block chain technology, finance, investment banking, encrypted digital currency and social media.',
+        huusionTitle: 'Quansheng Capital Management Private Limited ("Quansheng Capital")',
+        huusionContent: 'It is a sustainable fund management company. Yasheng Asia Growth Base is a private equity fund established to invest in growth stage companies in Asia, especially in China and Southeast Asia.',
+        conturionTitle: 'Shengting Investment Management Company (CIM)',
+        conturionContent: 'It is a private equity fund company in Asia, mainly investing in small and medium-sized enterprises. It is headquartered in Singapore and has offices in Hong Kong and Shanghai to provide one-stop financial services.',
         venturesTitle: 'Jungle Ventures',
-        venturesContent: '是一家新加坡地区的投资于全球范围内的风险投资公司，向早期的创业型公司提供早期的投资和商业组织架构的建设。',
-        wehTitle: '交易所交易基金（Exchange Traded Funds，简称ETF）',
-        wehContent: '是一种在交易所上市交易的、基金份额可变的一种开放式基金 ;2、ETF基金由四大财团与星美集团联合推出，以数字通证指数为投资对象的ETF基金，通过构建数字通证投资组合，以追踪数字通证指数表现，为投资者带来.盈利回报。',
-        ETFPenpleTitle: 'ETF基金人员介绍',
+        venturesContent: 'Singaporean venture capital company is a global venture capital company that provides early investment and business organization for early start-ups.',
+        wehTitle: 'Exchange Traded Funds',
+        wehContent: 'ETF fund is an open-end fund which is listed and traded on the stock exchange and has variable fund share. 2. ETF fund is jointly launched by four major consortia and Xingmei Group. ETF fund, which invests in digital currency index, can track the performance of digital currency index by constructing digital currency portfolio, and bring profit returns to investors. 。',
+        ETFPenpleTitle: 'Introduction of ETF Fund Personnel',
         Yaros: 'Yaros Sivokhin',
-        YarosPosition: '联合创始人',
-        YarosBrief: '毕业于美国哥伦比亚大学数据统计专业，曾就职于 Fortune 500 强国际知名企业，擅长互联网大数据分析、数据挖掘及智能合约设计。',
+        YarosPosition: 'Co-founder',
+        YarosBrief: 'Graduated from Columbia University, USA, majoring in data statistics, and worked in Fortune 500 leading international companies. He is good at big data analysis, data mining and intelligent contract design of the Internet.',
         Marc: 'Marc Howland',
         MarcPosition: 'CEO',
-        MarcBrief: 'Marc 是 Keyturn 的联合创始⼈兼业务开发⼈员，致力于运用区块链技术建⽴供应链中心产品。他曾供职于Goldman Sachs & The Carlyle Group，并对于私人产权以及投资银行有相当丰富的经验。他是 Brown 的经济学学士，并正在哈弗商学院就读工商管理学硕士学位。',
+        MarcBrief: "Marc is a co-founder and business developer of Keyturn, dedicated to building supply chain center products using block chain technology. He has worked for Goldman Sachs & The Carlyle Group and has considerable experience in private equity and investment banking. He is Brown's Bachelor of Economics and a Master of Business Administration at Harvard Business School.",
         Nick: 'Nick Olender',
-        NickPosition: '首席运营官',
-        NickBrief: '毕业于卡内基梅隆大学电子工程博士，8 年科技行业国际营销经验，专注于国际商业策略，尤其是业务⾦融和技术应用程序领域。'
+        NickPosition: 'chief operating officer',
+        NickBrief: 'Graduated from Carnegie Mellon University with a PhD in Electronic Engineering, 8 years of international marketing experience in science and technology industry, focusing on international business strategy, especially business finance and technology application.'
     },
     new: {
-        title: '新闻媒体',
+        title: 'News',
         firstTitle: '区块链技术开发生态环境尚未完善，前路茫茫?',
         firstContent: '区块链技术开发生态环境尚未完善，很多区块链技术开发项目落地存在着生态配套设施的问题。 我们对区块链技术应用的认知存在盲区，导致很多区块链底层技术的完善，特别是扩展性问题的,致很多区块链底层技术的完善...',
         firstTime: '发布时间：2019-08-21  14:20',
@@ -241,7 +248,7 @@ module.exports = {
         nextTex: '下一页'
     },
     newDetail: {
-        title: '新闻媒体',
+        title: 'News',
         newAdress: '当前位置',
         secondAdress: '新闻媒体',
         newDetail: '新闻详情',
@@ -261,51 +268,31 @@ module.exports = {
         NEWX: '下一篇：公有链技术开公链系统发费用是多少钱？'
     },
     aboutUs: {
-        title: '联系我们',
-        purpose1: '我们致力于建立开源透明的信任机制，星美始终坚持“自主代码+开源路线”的技术战略。',
-        purpose2: '力争成为世界级区块链底层技术公司，帮助每个组织拥抱区块链 !',
-        email: '邮箱',
-        emailTips: '请输入您的邮箱',
-        phone: '电话',
-        phoneTips: '请输入你的手机号码',
-        leavingMessage: '留言信息',
-        leavingMessageTips: '请输入您的留言信息',
-        btnTips: '提交信息'
+        title: 'Contact Us',
+        purpose: 'We are committed to the establishment of open source transparent trust mechanism, Xingmei has always adhered to the "independent code + open source line" technology strategy.',
+        email: 'mailbox',
+        emailTips: 'Please enter your mailbox',
+        phone: 'Telephone',
+        phoneTips: 'Please enter your phone number.',
+        leavingMessage: 'Message message',
+        leavingMessageTips: 'Please enter your message information',
+        btnTips: 'Submit'
     },
     footer: {
         company: {
-            name: '新加坡星美金融科技公司',
-            address: '地址：深圳市南山区科技南十二路12号朗诗大夏1909室',
-            phone: '电话：'
+            name: 'Singapore Singmei Financial Technology Co.',
+            address: 'Address: Room 1909, Longshi Daxia, 12 Science and Technology South 12 Road, Nanshan District, Shenzhen',
+            phone: 'Telephone:'
         },
         server: {
-            name: '服务列表',
-            list: [{
-                name: '首页',
-                route: '/'
-            }, {
-                name: '公司介绍',
-                route: '/companyIntroduction'
-            },
-            {
-                name: '新闻媒体',
-                route: '/new'
-            },
-            {
-                name: '联系我们',
-                route: '/contactUs'
-            },
-            {
-                name: '战略合作伙伴',
-                route: '/cooperation'
-            }
-            ]
+            name: 'Service List',
+            list: ['Index', 'Company', 'News', 'Contact us', 'Strategic Partners']
         },
         download: {
-            name: '下载app',
-            description: '让科技改变未来,打造最强区块链通证银行',
-            ios: 'iOS下载',
-            android: 'Android下载'
+            name: 'download app',
+            description: 'Let Science and Technology Change the Future and Build the Strongest Sector Chain Circular Bank',
+            ios: 'iOS Download',
+            android: 'Android Download'
         }
     }
 };

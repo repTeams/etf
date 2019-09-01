@@ -18,7 +18,7 @@ import qs from 'qs';
 // import VueQArt from 'vue-qart'
 // Vue.use(VueQArt);
 if (location.href.indexOf('localhost') > -1) {
-    axios.defaults.baseURL = 'http://reg.isunn.cn';
+    axios.defaults.baseURL = 'http://etfe.ddblock.pro';
 }
 // POST传参序列化
 axios.interceptors.request.use((config) => {

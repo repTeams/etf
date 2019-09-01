@@ -1,9 +1,16 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 00:51:27
+ * @LastEditTime: 2019-08-31 18:10:39
  */
 module.exports = {
+    hear: {
+        page1: '首页',
+        page2: '公司介绍',
+        page3: '新闻媒体',
+        page4: '联系我们',
+        page5: '战略合作伙伴'
+    },
     home: {
         register: '注册',
         firstScreen: {
@@ -262,8 +269,7 @@ module.exports = {
     },
     aboutUs: {
         title: '联系我们',
-        purpose1: '我们致力于建立开源透明的信任机制，星美始终坚持“自主代码+开源路线”的技术战略。',
-        purpose2: '力争成为世界级区块链底层技术公司，帮助每个组织拥抱区块链 !',
+        purpose: '我们致力于建立开源透明的信任机制，星美始终坚持“自主 代码+开源路线”的技术战略。',
         email: '邮箱',
         emailTips: '请输入您的邮箱',
         phone: '电话',
@@ -280,26 +286,7 @@ module.exports = {
         },
         server: {
             name: '服务列表',
-            list: [{
-                name: '首页',
-                route: '/'
-            }, {
-                name: '公司介绍',
-                route: '/companyIntroduction'
-            },
-            {
-                name: '新闻媒体',
-                route: '/new'
-            },
-            {
-                name: '联系我们',
-                route: '/contactUs'
-            },
-            {
-                name: '战略合作伙伴',
-                route: '/cooperation'
-            }
-            ]
+            list: ['首页', '公司介绍', '新闻媒体', '联系我们', '战略或作伙伴']
         },
         download: {
             name: '下载app',
