@@ -1,4 +1,4 @@
-import CryptoJS from 'crypto-js/crypto-js'
+import CryptoJS from 'crypto-js/crypto-js'  
 
 // 默认的 KEY 与 iv 如果没有给
 const KEY = CryptoJS.enc.Utf8.parse("etfe@#$!try12345");
@@ -48,5 +48,5 @@ export function Decrypt(word, keyStr, ivStr) {
   });
 
   var decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
-  return decryptedStr.toString();
+    return decryptedStr.toString();
 }
