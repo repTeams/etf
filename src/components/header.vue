@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-29 22:30:22
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 18:11:32
+ * @LastEditTime: 2019-09-01 23:22:56
 -->
 <template>
     <header class="header">
@@ -267,7 +267,7 @@ export default {
             }
         }
     }
-    @media only screen and (max-width: 1070px) {
+    @media only screen and (max-width: 1150px) {
         [data-dpr="1"] .header {
             font-size: 16PX;
             .btn-register, .header-lang p, .header-lang ul li {
@@ -281,7 +281,7 @@ export default {
             }
         }
     }
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 970px) {
         [data-dpr="1"] .header {
             .header-lang {
                 margin-left: 0;
@@ -297,13 +297,10 @@ export default {
             }
         }
     }
-    @media only screen and (min-width: 751px) and (max-width: 800px) {
+    @media only screen and (max-width: 850px) {
         [data-dpr="1"] .header {
             padding-left: 10px;
             padding-right: 10px;
-            // .header-lang {
-            //     margin-left: 0;
-            // }
             .header-menu {
                 margin-left: 15PX;
                 > li {
@@ -311,6 +308,17 @@ export default {
                     &:last-child {
                         margin-right: 0;
                     }
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 751px) and (max-width: 810px) {
+        [data-dpr="1"] .header {
+            .header-menu {
+                margin-left: 10PX;
+                > li {
+                    margin-right: 10PX;
+                    font-size: 15px;
                 }
             }
         }
