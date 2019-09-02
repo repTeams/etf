@@ -88,6 +88,17 @@ export function isValidatePassword (value) {
     }
 }
 
+// 是否为6位和数字组成
+export function isValidatePayPassword (value) {
+    var reg = /[0-9]{6}$/; // 是否含有字母
+
+    if (reg.test(value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // 邮箱验证
 export function checkEmail (value) {
     // const regex = /^[a-zA-Z0-9_.-]+@([a-zA-Z0-9]+[-a-zA-Z0-9]*[a-zA-Z0-9]+.){1,63}[a-z0-9]+$/i;
