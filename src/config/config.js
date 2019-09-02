@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-28 16:20:52
+ * @LastEditTime: 2019-09-02 21:48:15
  */
 import Vue from 'vue';
 import Element from 'element-ui';
@@ -17,15 +17,9 @@ import qs from 'qs';
 
 // import VueQArt from 'vue-qart'
 // Vue.use(VueQArt);
-<<<<<<< HEAD
-if (location.href.indexOf('localhost') > -1) {
-    axios.defaults.baseURL = 'http://etfe.ddblock.pro';
-}
-=======
 // if (location.href.indexOf('localhost') > -1) {
 axios.defaults.baseURL = 'http://etfe.ddblock.pro';
 // }
->>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
 // POST传参序列化
 axios.interceptors.request.use((config) => {
     if (config.data && config.method === 'post' && config.data.constructor !== FormData) {
@@ -56,19 +50,11 @@ Vue.prototype.$qs = qs;
 Vue.use(Element, {
     size: 'medium' // set element-ui default size
 });
-<<<<<<< HEAD
-if (location.href.indexOf('localhost') > -1) {
-    Vue.prototype.$baseUrl = 'http:///pisen.isunn.cn';
-} else {
-    Vue.prototype.$baseUrl = '';
-}
-=======
 // if (location.href.indexOf('localhost') > -1) {
 Vue.prototype.$baseUrl = 'http://etfe.ddblock.pro';
 // } else {'
 // Vue.prototype.$baseUrl = '';
 // }
->>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
 // Vue.prototype.defaultImg = 'this.src="' + require('@/static/img/defaultImg.png') + '"'; // 默认图片
 Object.keys(filters).forEach(key => {
     Vue.filter(key, filters[key]);

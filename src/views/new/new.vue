@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-27 20:15:06
+ * @LastEditTime: 2019-09-02 21:49:59
 -->
 <template>
     <ul class="new-main">
@@ -45,11 +45,7 @@
           :prev-text="$t('new.prevTex')"
           :next-text="$t('new.nextTex')"
           layout="prev, pager, next"
-<<<<<<< HEAD
-          :total="1000">
-=======
           :total="30">
->>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
         </el-pagination>
     </ul>
 </template>
