@@ -30,8 +30,7 @@ export default {
         return {
             steep: 'first',
             registerMessage: {},
-            words: '',
-            text: '测试代码'
+            words: ''
         };
     },
     methods: {
