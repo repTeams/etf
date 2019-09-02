@@ -82,6 +82,7 @@
         position: fixed;
         bottom: 60px;
         right: 24px;
+        z-index: 20;
     }
 }
 
@@ -94,6 +95,7 @@
         height: 1208px;
         background-repeat: no-repeat;
         padding-top: 200px;
+        background-size: contain;
     }
     h1 {
         max-width: 90%;

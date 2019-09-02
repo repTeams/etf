@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 22:27:48
+ * @LastEditTime: 2019-09-02 16:24:50
 -->
 <template>
     <div class="home-bg">
@@ -419,8 +419,6 @@ export default {
         [data-dpr="1"] .token-bank {
             .screen-title {
                 font-size: 24PX;
-                // padding-left: 20PX;
-                // padding-right: 20PX;
             }
         }
     }

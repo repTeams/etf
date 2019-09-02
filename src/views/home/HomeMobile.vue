@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-02 16:03:22
+ * @LastEditTime: 2019-09-02 16:25:45
 -->
 <template>
     <div class="home-bg">
@@ -134,7 +134,7 @@
         <img v-if="isScrollTop" src="../../static/img/home/icon_up.png"
             alt="up"
             srcset="../../static/img/home/icon_up@2x.png 2x"
-            width="114px" height="114px"
+            width="12%"
             @click="scrollTop">
         <QrCodeVue :qrCode.sync="qrCode"/>
     </div>
