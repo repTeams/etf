@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 22:04:39
+ * @LastEditTime: 2019-09-02 18:05:44
 -->
 <template>
     <div class="home-bg">
@@ -19,22 +19,25 @@
             <h1 class="half-border screen-title">{{$t('home.tokenBank.title')}}</h1>
             <p class="screen-description">{{$t('home.tokenBank.description')}}</p>
             <div class="token-bank-mobile">
-                <img src="../../static/img/home/img_mobile.png"
+                <i class="token-bank-mobile-img"></i>
+                <!-- <img src="../../static/img/home/img_mobile.png"
                     alt="手机"
-                    srcset="../../static/img/home/img_mobile@2x.png 2x">
+                    srcset="../../static/img/home/img_mobile@2x.png 2x"> -->
                 <div>
                     <button class="btn-mobile-download btn-ios" @click="download('ios')">
-                        <img src="../../static/img/home/ios.png"
+                        <i class="icon-ios"></i>
+                        <!-- <img src="../../static/img/home/ios.png"
                                 alt="ios"
                                 srcset="../../static/img/home/ios@2x.png 2x"
-                                width="28px" height="32px">
+                                width="28px" height="32px"> -->
                         {{$t('home.tokenBank.iosDownload')}}
                     </button>
                     <button class="btn-mobile-download btn-android" @click="download('android')">
-                        <img src="../../static/img/home/android.png"
+                        <i class="icon-android"></i>
+                        <!-- <img src="../../static/img/home/android.png"
                                 alt="android"
                                 srcset="../../static/img/home/android@2x.png 2x"
-                                width="30px" height="36px">
+                                width="30px" height="36px"> -->
                         {{$t('home.tokenBank.androidDownload')}}
                     </button>
                 </div>
@@ -44,16 +47,18 @@
             <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
             <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
             <button class="btn-mobile-download btn-ios" @click="download('ios')">
-                <img src="../../static/img/home/ios.png"
+                <i class="icon-ios"></i>
+                <!-- <img src="../../static/img/home/ios.png"
                         alt="ios"
                         srcset="../../static/img/home/ios@2x.png 2x"
-                        width="28px" height="32px">
+                        width="28px" height="32px"> -->
                 {{$t('home.tokenBank.iosDownload')}}
             </button>
-            <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
+            <i class="white-paper-img-bg"></i>
+            <!-- <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
                 alt="白皮书"
                 srcset="../../static/img/home/img_whitepaper@2x.png 2x, ../../static/img/home/img_whitepaper@2x.png 3x"
-                width="687px" height="627px">
+                width="687px" height="627px"> -->
         </section>
         <section class="project-introduction screen">
             <h1 class="half-border screen-title">{{$t('home.projectIntroduction.title')}}</h1>
@@ -134,7 +139,7 @@
         <img v-if="isScrollTop" src="../../static/img/home/icon_up.png"
             alt="up"
             srcset="../../static/img/home/icon_up@2x.png 2x"
-            width="114px" height="114px"
+            width="12%"
             @click="scrollTop">
         <QrCodeVue :qrCode.sync="qrCode"/>
     </div>
@@ -189,6 +194,17 @@ export default {
 </script>
 <style scoped lang="scss">
     @import './Home.scss';
+    @mixin img ($width, $height, $url) {
+        display: block;
+        width: $width;
+        height: $height;
+        background: url($url);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .icon-ios {
+        @include img (28px, 32px, '../../static/img/home/ios.png');
+    }
     .first-screen {
         padding-top: 20px;
         img {
@@ -198,6 +214,21 @@ export default {
             transform: translateX(-50%);
             animation: slideDown .8s infinite cubic-bezier(0.4, 0, 1, 1);
             cursor: pointer;
+        }
+    }
+    .token-bank {
+        .token-bank-mobile {
+            .token-bank-mobile-img {
+                @include img (227px, 476px, '../../static/img/home/img_mobile.png');
+            }
+            .icon-android {
+                @include img (30px, 36px, '../../static/img/home/android.png');
+            }
+        }
+    }
+    .white-paper {
+        .white-paper-img-bg {
+            @include img (687px, 627px, '../../static/img/home/img_whitepaper.png');
         }
     }
     .currency-introduction {
@@ -239,6 +270,21 @@ export default {
         .first-screen-container {
             background-image: url('../../static/img/home/bg_mobile@2x.png');
         }
+        // .token-bank .token-bank-mobile .token-bank-mobile-img {
+        //     background-image: url('../../static/img/home/img_mobile@2x.png');
+        //     width: 400px;
+        //     height: 952px;
+        // }
+        // .icon-ios {
+        //     background-image: url('../../static/img/home/ios@2x.png');
+        //     width: 56px;
+        //     height: 64px;
+        // }
+        // .token-bank .token-bank-mobile .icon-android {
+        //     background-image: url('../../static/img/home/android@2x.png');
+        //     width: 60px;
+        //     height: 72px;
+        // }
     }
     /* 如果设备像素大于等于3，则用3倍图 */
     @media only screen and (-webkit-min-device-pixel-ratio: 3),
@@ -250,12 +296,27 @@ export default {
             background-image: url('../../static/img/home/bg_mobile@2x.png');
             background-size: contain;
         }
-        .white-paper {
-            .white-paper-img-bg {
-                top: 56%;
-                left: 46%;
-                transform: translateX(-50%);
-            }
-        }
+        // .white-paper {
+        //     .white-paper-img-bg {
+        //         top: 56%;
+        //         left: 46%;
+        //         transform: translateX(-50%);
+        //     }
+        // }
+        // .token-bank .token-bank-mobile .token-bank-mobile-img {
+        //     background-image: url('../../static/img/home/img_mobile@2x.png');
+        //     width: 400px;
+        //     height: 952px;
+        // }
+        // .icon-ios {
+        //     background-image: url('../../static/img/home/ios@2x.png');
+        //     width: 56px;
+        //     height: 64px;
+        // }
+        // .token-bank .token-bank-mobile .icon-android {
+        //     background-image: url('../../static/img/home/android@2x.png');
+        //     width: 60px;
+        //     height: 72px;
+        // }
     }
 </style>

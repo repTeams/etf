@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-08-31 23:54:16
+ * @LastEditTime: 2019-09-02 15:39:37
 -->
 <template>
     <div id="app">
@@ -41,6 +41,7 @@ export default {
     background: url('./static/img/bg_pc.png');
     background-size: 100%;
     min-height: 100vh;
+    overflow: hidden;
   }
   @media screen and (max-width: 750px) {
     #app{

@@ -45,7 +45,7 @@
           :prev-text="$t('new.prevTex')"
           :next-text="$t('new.nextTex')"
           layout="prev, pager, next"
-          :total="1000">
+          :total="30">
         </el-pagination>
     </ul>
 </template>

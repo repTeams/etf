@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 22:27:48
+ * @LastEditTime: 2019-09-02 18:28:50
 -->
 <template>
     <div class="home-bg">
@@ -27,17 +27,19 @@
                     <h1 class="half-border screen-title">{{$t('home.tokenBank.title')}}</h1>
                     <p class="screen-description">{{$t('home.tokenBank.description')}}</p>
                     <button class="btn-mobile-download btn-ios" @click="download('ios')">
-                        <img src="../../static/img/home/ios.png"
+                        <i class="icon-ios"></i>
+                        <!-- <img src="../../static/img/home/ios.png"
                                 alt="ios"
                                 srcset="../../static/img/home/ios@2x.png 2x"
-                                width="28px" height="32px">
+                                width="28px" height="32px"> -->
                         {{$t('home.tokenBank.iosDownload')}}
                     </button>
                     <button class="btn-mobile-download btn-android" @click="download('android')">
-                        <img src="../../static/img/home/android.png"
+                        <i class="icon-android"></i>
+                        <!-- <img src="../../static/img/home/android.png"
                                 alt="android"
                                 srcset="../../static/img/home/android@2x.png 2x"
-                                width="30px" height="36px">
+                                width="30px" height="36px"> -->
                         {{$t('home.tokenBank.androidDownload')}}
                     </button>
                 </div>
@@ -48,10 +50,11 @@
                 <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
                 <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
                 <button class="btn-mobile-download btn-ios" @click="download('ios')">
-                    <img src="../../static/img/home/ios.png"
+                    <i class="icon-ios"></i>
+                    <!-- <img src="../../static/img/home/ios.png"
                             alt="ios"
                             srcset="../../static/img/home/ios@2x.png 2x"
-                            width="28px" height="32px">
+                            width="28px" height="32px"> -->
                     {{$t('home.tokenBank.iosDownload')}}
                 </button>
             </div>
@@ -217,6 +220,14 @@ export default {
 </script>
 <style scoped lang="scss">
     @import './Home.scss';
+    @mixin img ($width, $height, $url) {
+        display: block;
+        width: $width;
+        height: $height;
+        background: url($url);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
     .en-screen {
         height: auto !important;
     }
@@ -228,6 +239,10 @@ export default {
         height: 1080PX;
         margin: 0 auto;
     }
+    .icon-ios {
+        @include img (28px, 32px, '../../static/img/home/ios.png');
+    }
+
     .home-bg {
         background-image: url('../../static/img/home/bg_home_pc.png');
         background-size: 100% 1080PX;
@@ -263,7 +278,6 @@ export default {
             cursor: pointer;
         }
     }
-
     .token-bank {
         position: relative;
         .screen-title {
@@ -419,8 +433,6 @@ export default {
         [data-dpr="1"] .token-bank {
             .screen-title {
                 font-size: 24PX;
-                // padding-left: 20PX;
-                // padding-right: 20PX;
             }
         }
     }

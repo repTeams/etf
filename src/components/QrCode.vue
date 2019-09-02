@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-09-01 19:24:33
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 20:53:14
+ * @LastEditTime: 2019-09-02 16:22:50
 -->
 <template>
     <div class="qr-code" @click="hideQrCode" v-show="qrCodeType">
@@ -52,6 +52,14 @@ export default {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+
+    @media only screen and (max-width: 750px) {
+        .qr-code {
+            img {
+                width: 90%;
+            }
         }
     }
 </style>

@@ -50,11 +50,11 @@ Vue.prototype.$qs = qs;
 Vue.use(Element, {
     size: 'medium' // set element-ui default size
 });
-if (location.href.indexOf('localhost') > -1) {
-    Vue.prototype.$baseUrl = 'http:///pisen.isunn.cn';
-} else {
-    Vue.prototype.$baseUrl = '';
-}
+// if (location.href.indexOf('localhost') > -1) {
+Vue.prototype.$baseUrl = 'http://etfe.ddblock.pro';
+// } else {'
+// Vue.prototype.$baseUrl = '';
+// }
 // Vue.prototype.defaultImg = 'this.src="' + require('@/static/img/defaultImg.png') + '"'; // 默认图片
 Object.keys(filters).forEach(key => {
     Vue.filter(key, filters[key]);
