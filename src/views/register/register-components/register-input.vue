@@ -13,6 +13,12 @@
             <el-form-item label="" prop="userName">
               <el-input type="text" v-model="ruleForm.userName" autocomplete="off" :placeholder="$t('register.first.nameTips')"></el-input>
             </el-form-item>
+<<<<<<< HEAD
+=======
+            <el-form-item label="">
+              <el-input type="text" v-model="ruleForm.inviteCode" autocomplete="off" :placeholder="$t('register.first.invitationTips')"></el-input>
+            </el-form-item>
+>>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
             <el-form-item label="" prop="password">
               <el-input type="password" v-model="ruleForm.password" autocomplete="off" :placeholder="$t('register.first.passwordTips')"></el-input>
             </el-form-item>
@@ -25,9 +31,12 @@
             <el-form-item label="" prop="payPassWordTwo">
               <el-input type="password" v-model="ruleForm.payPassWordTwo" autocomplete="off" :placeholder="$t('register.first.payTwoTips')"></el-input>
             </el-form-item>
+<<<<<<< HEAD
             <el-form-item label="">
               <el-input type="text" v-model="ruleForm.inviteCode" autocomplete="off" :placeholder="$t('register.first.invitationTips')"></el-input>
             </el-form-item>
+=======
+>>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
           </el-form>
         </li>
         <li class="register-btn" @click="register()">
@@ -41,15 +50,26 @@
 
 <script>
 // , checkEmail
+<<<<<<< HEAD
 import { isMob, isValidatePassword } from '@/filters/filters';
+=======
+import { isValidatePassword } from '@/filters/filters';
+>>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
 export default {
     name: 'register-input',
     data () {
         var userName = (rule, value, callback) => {
+<<<<<<< HEAD
             this.ruleForm.isuserName = isMob(value);
             if (!this.ruleForm.isuserName) {
                 this.$message({
                     message: '请输入正确的手机号码',
+=======
+            this.ruleForm.isuserName = value.length < 30 ? 1 : 0;
+            if (!this.ruleForm.isuserName) {
+                this.$message({
+                    message: '账号不能超过30个字符',
+>>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
                     type: 'warning'
                 });
             } else {
@@ -135,7 +155,17 @@ export default {
     },
     methods: {
         register () {
+<<<<<<< HEAD
             console.log(this.ruleForm.isuserName, this.ruleForm.isRulePassword, this.ruleForm.isRulePasswordTwo, this.ruleForm.ispayPassWord, this.ruleForm.ispayPassWordTwo);
+=======
+            if (!this.ruleForm.inviteCode) {
+                this.$message({
+                    message: '邀请码不能为空',
+                    type: 'warning'
+                });
+                return;
+            }
+>>>>>>> 93ce2718b2d8d98be0b355256c4b05021a7da474
             if (!this.ruleForm.isuserName || !this.ruleForm.isRulePassword || !this.ruleForm.isRulePasswordTwo || !this.ruleForm.ispayPassWord || !this.ruleForm.ispayPassWordTwo) {
                 this.$message({
                     message: '请检查您的注册信息',
