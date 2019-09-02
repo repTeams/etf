@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 22:04:39
+ * @LastEditTime: 2019-09-02 16:03:22
 -->
 <template>
     <div class="home-bg">
