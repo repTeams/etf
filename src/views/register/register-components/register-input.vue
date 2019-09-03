@@ -41,7 +41,7 @@
 
 <script>
 // , checkEmail
-import { isValidatePassword } from '@/filters/filters';
+import { isValidatePassword, isValidatePayPassword } from '@/filters/filters';
 export default {
     name: 'register-input',
     data () {
@@ -79,10 +79,10 @@ export default {
             }
         };
         var payPassWord = (rule, value, callback) => {
-            this.ruleForm.ispayPassWord = isValidatePassword(value);
+            this.ruleForm.ispayPassWord = isValidatePayPassword(value);
             if (!this.ruleForm.ispayPassWord) {
                 this.$message({
-                    message: '支付密码由8-20个字符，必由英文字母（区分大小写），和数字或符号组成',
+                    message: '支付密码由6个数字组成',
                     type: 'warning'
                 });
             } else {
