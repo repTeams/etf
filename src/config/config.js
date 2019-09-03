@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-02 21:48:15
+ * @LastEditTime: 2019-09-03 23:39:02
  */
 import Vue from 'vue';
 import Element from 'element-ui';
@@ -19,6 +19,7 @@ import qs from 'qs';
 // Vue.use(VueQArt);
 // if (location.href.indexOf('localhost') > -1) {
 axios.defaults.baseURL = 'http://etfe.ddblock.pro';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 // }
 // POST传参序列化
 axios.interceptors.request.use((config) => {
