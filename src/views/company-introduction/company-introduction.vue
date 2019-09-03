@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-31 13:29:44
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-01 23:05:40
+ * @LastEditTime: 2019-09-03 20:58:38
 -->
 <template>
     <div class="company-introduction" :class="{'en-screen': $i18n.locale === 'en'}">
@@ -43,7 +43,7 @@
                 <li v-for="(item, index) in $t('companyIntroduction.teamMembers.members')" :key="index">
                     <img v-if="index === 0" src="../../static/img/company-introduction/img_WillJohnson.png"
                     alt="公司简介"
-                    srcset="../../static/img/company-introduction/img_WillJohnson@2x.png 2x">
+                    >
                     <img v-if="index === 1" src="../../static/img/company-introduction/img_Julian.png"
                     alt="公司简介"
                     srcset="../../static/img/company-introduction/img_Julian@2x.png 2x">
@@ -385,6 +385,7 @@ export default {
             > ul {
                 li {
                     width: 100%;
+                    height: 820px;
                 }
             }
         }
@@ -446,6 +447,13 @@ export default {
                 font-size: 50px;
             }
         }
+        .introduction .introduction-right .location p,
+        .core-team > ul li p,
+        .team-members .member-description-wrap > p,
+        .enterprise-strength > ul li p {
+            font-size: 28px;
+            line-height: 45px;
+        }
     }
     @media only screen and (max-width: 750px) {
         .title {
@@ -482,7 +490,7 @@ export default {
         }
         .en-screen {
             .team-members > ul > li {
-                height: 1000px !important;
+                height: 1040px !important;
             }
         }
     }
@@ -504,8 +512,8 @@ export default {
             }
             .team-members {
                 > ul {
-                    li {
-                        height: 780px;
+                    li:first-child, li:last-child {
+                        height: 840px;
                     }
                 }
                 .member-description-wrap {
@@ -546,11 +554,6 @@ export default {
             }
         }
         .en-screen {
-            .team-members > ul > li {
-                &:first-child {
-                    height: 880px;
-                }
-            }
             .enterprise-strength > h1 {
                 font-size: 50px;
             }
