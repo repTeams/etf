@@ -1,49 +1,64 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-02 21:49:40
+ * @LastEditTime: 2019-09-07 21:39:53
 -->
 <template>
-     <ul class="register-iinput-warp">
+    <ul class="register-iinput-warp">
         <li class="register-iinput-title">
-          <div class="register-iinput-title-tips">{{$t('register.first.title')}}</div>
+            <div class="register-iinput-title-tips">{{$t('register.first.title')}}</div>
         </li>
         <li>
-          <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0" class="demo-ruleForm">
+            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0" class="demo-ruleForm">
             <el-form-item label="" prop="userName">
-              <el-input type="text" v-model="ruleForm.userName" autocomplete="off" :placeholder="$t('register.first.nameTips')"></el-input>
+                <el-input type="text" v-model="ruleForm.userName" autocomplete="off" :placeholder="$t('register.first.nameTips')"></el-input>
             </el-form-item>
             <el-form-item label="">
-              <el-input type="text" v-model="ruleForm.inviteCode" autocomplete="off" :placeholder="$t('register.first.invitationTips')"></el-input>
+                <el-input type="text" v-model="ruleForm.inviteCode" autocomplete="off" :placeholder="$t('register.first.invitationTips')"></el-input>
             </el-form-item>
             <el-form-item label="" prop="password">
-              <el-input type="password" v-model="ruleForm.password" autocomplete="off" :placeholder="$t('register.first.passwordTips')"></el-input>
+                <el-input type="password" v-model="ruleForm.password" autocomplete="off" :placeholder="$t('register.first.passwordTips')"></el-input>
             </el-form-item>
             <el-form-item label="" prop="passwordTwo">
-              <el-input type="password" v-model="ruleForm.passwordTwo" autocomplete="off" :placeholder="$t('register.first.passwordTwoTips')"></el-input>
+                <el-input type="password" v-model="ruleForm.passwordTwo" autocomplete="off" :placeholder="$t('register.first.passwordTwoTips')"></el-input>
             </el-form-item>
             <el-form-item label="" prop="payPassWord">
-              <el-input type="password" v-model="ruleForm.payPassWord" autocomplete="off" :placeholder="$t('register.first.payTips')"></el-input>
+                <el-input type="password" v-model="ruleForm.payPassWord" autocomplete="off" :placeholder="$t('register.first.payTips')"></el-input>
             </el-form-item>
             <el-form-item label="" prop="payPassWordTwo">
-              <el-input type="password" v-model="ruleForm.payPassWordTwo" autocomplete="off" :placeholder="$t('register.first.payTwoTips')"></el-input>
+                <el-input type="password" v-model="ruleForm.payPassWordTwo" autocomplete="off" :placeholder="$t('register.first.payTwoTips')"></el-input>
             </el-form-item>
-          </el-form>
+            <el-form-item prop="picVerificationCode">
+                <div class="el-input--medium" style="display: flex;justify-content: space-between;align-items: center;">
+                    <el-input type="text" v-model="ruleForm.picVerificationCode" autocomplete="off" :placeholder="$t('register.first.payTwoTips')" style="width: 56%;"></el-input>
+                    <VerificationCodeVue
+                        class="el-input__inner"
+                        @update:verificationCode="updateVerificationCode($event)"
+                        style="width: 40%;"
+                    />
+                </div>
+            </el-form-item>
+            </el-form>
         </li>
         <li class="register-btn" @click="register()">
-          {{$t('register.first.newBtnTips')}}
+            {{$t('register.first.newBtnTips')}}
         </li>
         <li class="come-black-warp">
-          <span class="come-black-tips" @click="comeBlack()">{{$t('register.first.comeBlack')}}</span>
+            <span class="come-black-tips" @click="comeBlack()">{{$t('register.first.comeBlack')}}</span>
         </li>
-      </ul>
+    </ul>
 </template>
 
 <script>
 // , checkEmail
 import { isValidatePassword, isValidatePayPassword } from '@/filters/filters';
+import VerificationCodeVue from '../../../components/VerificationCode.vue';
+
 export default {
     name: 'register-input',
+    components: {
+        VerificationCodeVue
+    },
     data () {
         var userName = (rule, value, callback) => {
             this.ruleForm.isuserName = value.length < 30 ? 1 : 0;
@@ -100,7 +115,19 @@ export default {
                 callback();
             }
         };
+        var picVerificationCode = (rule, value, callback) => {
+            this.ruleForm.isPicVerificationCode = this.picVerificationCode === this.ruleForm.picVerificationCode;
+            if (!this.ruleForm.isPicVerificationCode) {
+                this.$message({
+                    message: '图形验证码不正确！',
+                    type: 'warning'
+                });
+            } else {
+                callback();
+            }
+        };
         return {
+            picVerificationCode: '',
             ruleForm: {
                 userName: '',
                 isuserName: false,
@@ -112,7 +139,9 @@ export default {
                 payPassWord: '',
                 ispayPassWord: false,
                 payPassWordTwo: '',
-                ispayPassWordTwo: false
+                ispayPassWordTwo: false,
+                picVerificationCode: '',
+                isPicVerificationCode: false
             },
             rules: {
                 userName: [
@@ -129,6 +158,9 @@ export default {
                 ],
                 payPassWordTwo: [
                     { validator: payPassWordTwo, trigger: 'blur' }
+                ],
+                picVerificationCode: [
+                    { validator: picVerificationCode, trigger: 'blur' }
                 ]
             }
         };
@@ -142,7 +174,7 @@ export default {
                 });
                 return;
             }
-            if (!this.ruleForm.isuserName || !this.ruleForm.isRulePassword || !this.ruleForm.isRulePasswordTwo || !this.ruleForm.ispayPassWord || !this.ruleForm.ispayPassWordTwo) {
+            if (!this.ruleForm.isuserName || !this.ruleForm.isRulePassword || !this.ruleForm.isRulePasswordTwo || !this.ruleForm.ispayPassWord || !this.ruleForm.ispayPassWordTwo || !this.ruleForm.isPicVerificationCode) {
                 this.$message({
                     message: '请检查您的注册信息',
                     type: 'warning'
@@ -164,6 +196,10 @@ export default {
         },
         comeBlack () {
             this._jumpOtherUrl('/');
+        },
+        updateVerificationCode (newCode) {
+            this.picVerificationCode = newCode;
+            this.ruleForm.isPicVerificationCode = this.picVerificationCode === this.ruleForm.picVerificationCode;
         }
     }
 };
@@ -171,68 +207,68 @@ export default {
 
 <style lang='scss'>
     .register-iinput-warp{
-      width: 512px;
-      padding: 40px 65px;
-      background: rgba(35,41,85,1);
-      opacity: 0.8;
-      border-radius: 20px;
-      position: absolute;
-      box-shadow: 1px 1px 14px #153F6C;
-      border: 2px solid #153F6C;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
+        width: 512px;
+        padding: 40px 65px;
+        background: rgba(35,41,85,1);
+        opacity: 0.8;
+        border-radius: 20px;
+        position: absolute;
+        box-shadow: 1px 1px 14px #153F6C;
+        border: 2px solid #153F6C;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
     }
     .register-iinput-title{
-      width: 450px;
-      border-bottom: 1px solid #17FFFF;
-      margin-bottom: 40px;
+        width: 450px;
+        border-bottom: 1px solid #17FFFF;
+        margin-bottom: 40px;
     }
     .register-iinput-title-tips{
-      width:98px;
-      font-size:28px;
-      font-family:SourceHanSansCN;
-      font-weight:500;
-      color:rgba(23,255,255,1);
-      padding: 0 0 19px;
-      border-bottom: 2px solid rgba(23,255,255,1);
+        width:98px;
+        font-size:28px;
+        font-family:SourceHanSansCN;
+        font-weight:500;
+        color:rgba(23,255,255,1);
+        padding: 0 0 19px;
+        border-bottom: 2px solid rgba(23,255,255,1);
     }
     .el-input--medium .el-input__inner{
-      height: 40px;
-      background: #343D7A;
-      font-size: 16px;
-      color: #FAFAFA;
-      border: 0;
+        // height: 40px;
+        background: #343D7A;
+        font-size: 16px;
+        color: #FAFAFA;
+        border: 0;
     }
     .el-form-item{
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
     .register-btn{
-      height: 46px;
-      text-align: center;
-      line-height: 46px;
-      background: linear-gradient(to right, #21F1F5, #354EC8);
-      cursor: pointer;
-      color: #ffffff;
-      font-size: 20px;
+        height: 46px;
+        text-align: center;
+        line-height: 46px;
+        background: linear-gradient(to right, #21F1F5, #354EC8);
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 20px;
     }
     .come-black-warp{
-      position: absolute;
-      width:100%;
-      text-align: center;
-      bottom: -60px;
-      left: 0;
-      font-size: 22px;
-      color: #ffffff;
+        position: absolute;
+        width:100%;
+        text-align: center;
+        bottom: -60px;
+        left: 0;
+        font-size: 22px;
+        color: #ffffff;
     }
     .come-black-tips{
-      cursor: pointer;
-      line-height: 44px;
-      display: inline-block;
-      border-bottom: 1px solid #ffffff;
+        cursor: pointer;
+        line-height: 44px;
+        display: inline-block;
+        border-bottom: 1px solid #ffffff;
     }
     .come-black-tips:hover{
-      color: #21F1F5;
-      border-color: #21F1F5;
+        color: #21F1F5;
+        border-color: #21F1F5;
     }
 </style>

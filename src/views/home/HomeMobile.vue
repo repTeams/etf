@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-08-26 23:27:34
  * @LastEditors: fashandian
- * @LastEditTime: 2019-09-02 18:05:44
+ * @LastEditTime: 2019-09-06 12:31:26
 -->
 <template>
     <div class="home-bg">
@@ -46,14 +46,14 @@
         <section class="white-paper screen">
             <h1 class="half-border screen-title">{{$t('home.whitePaper.title')}}</h1>
             <p class="screen-description">{{$t('home.whitePaper.description')}}</p>
-            <button class="btn-mobile-download btn-ios" @click="download('ios')">
+            <!-- <button class="btn-mobile-download btn-ios" @click="download('ios')">
                 <i class="icon-ios"></i>
-                <!-- <img src="../../static/img/home/ios.png"
+                <img src="../../static/img/home/ios.png"
                         alt="ios"
                         srcset="../../static/img/home/ios@2x.png 2x"
-                        width="28px" height="32px"> -->
+                        width="28px" height="32px">
                 {{$t('home.tokenBank.iosDownload')}}
-            </button>
+            </button> -->
             <i class="white-paper-img-bg"></i>
             <!-- <img class="white-paper-img-bg" src="../../static/img/home/img_whitepaper.png"
                 alt="白皮书"
